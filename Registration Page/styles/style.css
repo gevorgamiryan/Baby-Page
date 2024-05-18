@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: meriewatter;
+  src: url(../fonts/Merriweather-Regular.ttf);
+}
+@font-face {
+  font-family: bebas;
+  src: url(../fonts/BebasNeue-Regular.ttf);
+}
+@font-face {
+  font-family: Quattrocento;
+  src: url(../fonts/Miama-Regular.ttf);
+}
+@font-face {
+  font-family: inter;
+  src: url(../fonts/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: cabin;
+  src: url(../fonts/static/Cabin-VariableFont_wdth\,wght.ttf);
+}
+.myContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1E1E1E;
+}
+.myContainer .formBox {
+  width: 410px;
+  height: 96vh;
+  background-color: rgb(255, 255, 255);
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.myContainer .formBox .welcome {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.myContainer .formBox .welcome a {
+  text-decoration: none;
+  font-family: meriewatter;
+  font-size: 25px;
+  font-weight: 900;
+  color: #88432D;
+}
+.myContainer .formBox .welcome .btn-secondary {
+  width: 115px;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  border-radius: 60px;
+  align-items: center;
+  background-color: transparent;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+}
+.myContainer .formBox .welcome .btn-secondary::after {
+  margin-top: 5px;
+  color: rgb(182, 182, 182);
+}
+.myContainer .formBox .welcome .dropdown-menu {
+  min-width: 115px;
+  height: 105px;
+  padding-top: 6px;
+  border-radius: 15px;
+}
+.myContainer .formBox .welcome .dropdown-menu .li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 5px 0 0 0;
+  transition: 0.3s;
+}
+.myContainer .formBox .welcome .dropdown-menu .li:hover {
+  background-color: rgba(46, 46, 46, 0.3333333333);
+}
+.myContainer .formBox .welcome .flagLi {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.myContainer .formBox .welcome .flag {
+  width: 20px;
+}
+.myContainer .formBox .welcomeText {
+  width: 100%;
+  text-align: center;
+  font-family: bebas;
+  color: black;
+  font-size: 5vh;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.myContainer .formBox .welcomeText span:nth-of-type(2) {
+  text-decoration: none;
+  font-family: Quattrocento;
+  color: #88432D;
+}
+.myContainer .formBox .welcomeText span:nth-of-type(1) {
+  text-transform: uppercase;
+  display: block;
+}
+.myContainer .formBox .gmail {
+  width: 310px;
+  height: 45px;
+  background-color: white;
+  border: 1px solid #D2D2D2;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inter;
+  font-size: 13px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  color: #AFA8A8;
+  transition: 0.5s;
+}
+.myContainer .formBox .gmail:hover {
+  color: #1E1E1E;
+  border: 1px solid #1E1E1E;
+}
+.myContainer .formBox .or {
+  letter-spacing: -3px;
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  width: 100%;
+  color: #AFA8A8;
+}
+.myContainer .formBox .or span {
+  letter-spacing: normal;
+}
+.myContainer .formBox .form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: start;
+  position: relative;
+}
+.myContainer .formBox .form .registrationInputArea {
+  width: 310px;
+  height: 45px;
+  background-color: white;
+  border: 1px solid #D2D2D2;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inter;
+  font-size: 13px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  color: #2E2E2E;
+  transition: 0.5s;
+  outline: none;
+  padding-left: 5px;
+  font-family: cabin;
+  font-weight: 600;
+}
+.myContainer .formBox .form .registrationInputArea::-moz-placeholder {
+  color: #2E2E2E;
+  font-weight: 600;
+}
+.myContainer .formBox .form .registrationInputArea::placeholder {
+  color: #2E2E2E;
+  font-weight: 600;
+}
+.myContainer .formBox .form .registrationInputArea:hover, .myContainer .formBox .form .registrationInputArea:focus {
+  color: #1E1E1E;
+  border: 1px solid #1E1E1E;
+}
+.myContainer .formBox .form label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.myContainer .formBox .form .mdl-js-button {
+  width: 310px;
+  height: 45px;
+  background-color: white;
+  border: 1px solid #D2D2D2;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inter;
+  font-size: 13px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  color: #2E2E2E;
+  transition: 0.5s;
+  outline: none;
+  padding-left: 5px;
+  font-family: cabin;
+  font-weight: 600;
+}
+.myContainer .formBox .form .login {
+  color: #000;
+  font-family: cabin;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.myContainer .formBox .form .login a {
+  color: #FEC00F;
+  cursor: pointer;
+}
+.myContainer .formBox .form .errorName {
+  color: rgb(226, 0, 0);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: -moz-max-content;
+  width: max-content;
+  font-family: inter;
+  font-weight: 900;
+}
+.myContainer .formBox .form .errorEmail {
+  color: rgb(226, 0, 0);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: -moz-max-content;
+  width: max-content;
+  font-family: inter;
+  font-weight: 900;
+}
+.myContainer .formBox .form .errorPassword {
+  color: rgb(226, 0, 0);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 175px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 12px;
+  font-family: inter;
+  font-weight: 900;
+}
+.myContainer .formBox .form .wrongData {
+  position: absolute;
+  color: red;
+  top: 111px;
+  font-size: 13px;
+  font-family: inter;
+  font-weight: 900;
+}
+.myContainer .background {
+  height: 96vh;
+  background-image: url(../images/free-photo-black-grunge-abstract-background-pattern-wallpaper\ 1.png);
+  background-size: cover;
+  width: 400px;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+}/*# sourceMappingURL=style.css.map */

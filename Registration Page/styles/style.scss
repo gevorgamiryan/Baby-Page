@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: meriewatter;
+    src: url(../fonts/Merriweather-Regular.ttf);
+}
+
+@font-face {
+    font-family: bebas;
+    src: url(../fonts/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+    font-family: Quattrocento;
+    src: url(../fonts/Miama-Regular.ttf);
+}
+
+@font-face {
+    font-family: inter;
+    src: url(../fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: cabin;
+    src: url(../fonts/static/Cabin-VariableFont_wdth\,wght.ttf);
+}
+
+.myContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1E1E1E;
+
+    .formBox {
+        width: clamp(410px, 410px, 410px);
+        height: 96vh;
+        background-color: rgb(255, 255, 255);
+        border-top-left-radius: 60px;
+        border-bottom-left-radius: 60px;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .welcome {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+
+            a {
+                text-decoration: none;
+                font-family: meriewatter;
+                font-size: 25px;
+                font-weight: 900;
+                color: #88432D;
+            }
+
+            .btn-secondary {
+                width: 115px;
+                display: flex;
+                justify-content: center;
+                height: 50px;
+                border-radius: 60px;
+                align-items: center;
+                background-color: transparent;
+                color: black;
+                border: 1px solid rgba(0, 0, 0, 0.175);
+
+                &::after {
+                    margin-top: 5px;
+                    color: rgb(182 182 182);
+                }
+            }
+
+            .dropdown-menu {
+                min-width: 115px;
+                height: 105px;
+                padding-top: 6px;
+                border-radius: 15px;
+
+
+                .li {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    flex-direction: row-reverse;
+                    font-size: 20px;
+                    cursor: pointer;
+                    margin: 5px 0 0 0;
+                    transition: .3s;
+
+                    &:hover {
+                        background-color: #2e2e2e55;
+                    }
+                }
+            }
+
+            .flagLi {
+                width: 100%;
+                list-style: none;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+
+            }
+
+            .flag {
+                width: 20px;
+            }
+
+
+        }
+
+        .welcomeText {
+            width: 100%;
+            text-align: center;
+            font-family: bebas;
+            color: black;
+            font-size: 5vh;
+            user-select: none;
+
+            span:nth-of-type(2) {
+
+                text-decoration: none;
+                font-family: Quattrocento;
+                color: #88432D;
+            }
+
+            span:nth-of-type(1) {
+                text-transform: uppercase;
+                display: block;
+            }
+
+        }
+
+        .gmail {
+            width: 310px;
+            height: 45px;
+            background-color: white;
+            border: 1px solid #D2D2D2;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: inter;
+            font-size: 13px;
+            column-gap: 15px;
+            color: #AFA8A8;
+            transition: .5s;
+
+            &:hover {
+                color: #1E1E1E;
+                border: 1px solid #1E1E1E;
+            }
+        }
+
+        .or {
+            letter-spacing: -3px;
+            display: flex;
+            justify-content: center;
+            column-gap: 15px;
+            width: 100%;
+            color: #AFA8A8;
+
+            span {
+                letter-spacing: normal;
+            }
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            align-items: start;
+            position: relative;
+
+            .registrationInputArea {
+                width: 310px;
+                height: 45px;
+                background-color: white;
+                border: 1px solid #D2D2D2;
+                border-radius: 6px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: inter;
+                font-size: 13px;
+                column-gap: 15px;
+                color: #2E2E2E;
+                transition: .5s;
+                outline: none;
+                padding-left: 5px;
+                font-family: cabin;
+                font-weight: 600;
+
+                &::placeholder {
+                    color: #2E2E2E;
+                    font-weight: 600;
+                }
+
+                &:hover,
+                &:focus {
+                    color: #1E1E1E;
+                    border: 1px solid #1E1E1E;
+                }
+            }
+
+            label {
+                user-select: none;
+            }
+
+            .mdl-js-button {
+                width: 310px;
+                height: 45px;
+                background-color: white;
+                border: 1px solid #D2D2D2;
+                border-radius: 6px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: inter;
+                font-size: 13px;
+                column-gap: 15px;
+                color: #2E2E2E;
+                transition: .5s;
+                outline: none;
+                padding-left: 5px;
+                font-family: cabin;
+                font-weight: 600;
+
+            }
+
+            .login {
+                color: #000;
+                font-family: cabin;
+                user-select: none;
+
+                a {
+                    color: #FEC00F;
+                    cursor: pointer;
+                }
+            }
+
+            .errorName {
+                color: rgb(226, 0, 0);
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                top: 45px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: max-content;
+                font-family: inter;
+                font-weight: 900;
+
+            }
+
+            .errorEmail {
+                color: rgb(226, 0, 0);
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                top: 110px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: max-content;
+                font-family: inter;
+                font-weight: 900;
+
+            }
+
+            .errorPassword {
+                color: rgb(226, 0, 0);
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                top: 175px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: max-content;
+                font-size: 12px;
+                font-family: inter;
+                font-weight: 900;
+            }
+            .wrongData{
+                position: absolute;
+                color: red;
+                top: 111px;
+                font-size: 13px;
+                font-family: inter;
+                font-weight: 900;
+            }
+        }
+    }
+
+
+
+    .background {
+        height: 96vh;
+        background-image: url(../images/free-photo-black-grunge-abstract-background-pattern-wallpaper\ 1.png);
+        background-size: cover;
+        width: clamp(400px, 400px, 400px);
+        border-top-right-radius: 60px;
+        border-bottom-right-radius: 60px;
+    }
+}

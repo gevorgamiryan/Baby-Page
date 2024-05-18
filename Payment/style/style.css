@@ -1,0 +1,737 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: Quattrocento;
+  src: url(../fonts/Quattrocento-Regular.ttf);
+}
+@font-face {
+  font-family: poppins;
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: Hind Vadodara;
+  src: url(../fonts/HindVadodara-Regular.ttf);
+}
+@font-face {
+  font-family: inter;
+  src: url(../fonts/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: lora;
+  src: url(../fonts/Lora-Regular.ttf);
+}
+@font-face {
+  font-family: Merriweather;
+  src: url(../fonts/Merriweather-Regular.ttf);
+}
+@font-face {
+  font-family: outfit;
+  src: url(../fonts/Outfit-Regular.ttf);
+}
+@font-face {
+  font-family: Miama;
+  src: url(../fonts/Miama-Regular.ttf);
+}
+@font-face {
+  font-family: Jomolhari;
+  src: url(../fonts/Jomolhari-Regular.ttf);
+}
+.container {
+  max-width: 1920px;
+  height: auto;
+}
+.container header {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 86px;
+  padding-right: 155px;
+  transition: 0.4s;
+  background-color: #563F30;
+}
+.container header .h1 a {
+  color: white;
+  font-family: Merriweather;
+  font-size: 32px;
+  font-weight: 900;
+  position: relative;
+  transition: 0.4s;
+}
+.container header menu {
+  display: flex;
+  gap: 50px;
+  margin-top: 5px;
+}
+.container header menu .navBar {
+  display: none;
+  position: relative;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  top: 5px;
+  z-index: 2;
+}
+.container header menu .navBar .navBarSpan {
+  background-color: rgb(0, 0, 0);
+  width: 20px;
+  height: 3px;
+  position: absolute;
+  top: 7px;
+  transform: translate(0, -7px);
+  cursor: pointer;
+  transition: 0.5s;
+}
+.container header menu .navBar .navBarSpan:nth-of-type(2) {
+  top: 13px;
+}
+.container header menu .navBar .navBarSpan:nth-of-type(3) {
+  transform: translate(0, 5px);
+}
+.container header menu nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+}
+.container header menu nav .fa {
+  display: none;
+  transition: 0.6s;
+}
+.container header menu nav a {
+  color: #ffffff;
+  font-family: Hind Vadodara;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+.container header menu nav a::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: linear-gradient(rgba(136, 68, 45, 0.5647058824), #ffffff, rgba(136, 68, 45, 0.5647058824));
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: 150ms;
+}
+.container header menu nav a:hover::after {
+  left: 0;
+  width: 100%;
+}
+.container header menu nav a::before {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: linear-gradient(rgba(136, 68, 45, 0.5647058824), #ffffff, rgba(136, 68, 45, 0.5647058824));
+  position: absolute;
+  top: 0;
+  transition-duration: 150ms;
+}
+.container header menu nav a:hover::before {
+  right: 0;
+  width: 100%;
+}
+.container header menu nav .space {
+  display: none;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  border-radius: 5px;
+}
+.container header menu .InLeftHandMenu {
+  width: 200px;
+  position: absolute;
+  left: -200px;
+  top: 47px;
+  flex-direction: column;
+  background-color: red;
+  display: flex;
+  z-index: 2;
+  gap: 0;
+  background-color: rgba(107, 53, 24, 0.91);
+  border-radius: 0 15px 15px 15px;
+  padding: 5px;
+  border: 2px dotted transparent;
+  height: 370px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.container header menu .InLeftHandMenu a {
+  font-size: 25px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.container header menu form {
+  width: 150px;
+  height: 22px;
+  border-radius: 30px;
+  border: 1px solid #ffffff;
+  margin-top: 2px;
+}
+.container header menu form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.container header menu form label input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-weight: 100;
+  outline: none;
+  font-size: 16px;
+  font-family: outfit;
+  padding-bottom: 2px;
+  border-radius: 10px;
+  padding-left: 8px;
+  padding-right: 5px;
+  margin-right: 1px;
+  background-color: unset;
+  color: white;
+}
+.container header menu form label input::-moz-placeholder {
+  color: white;
+}
+.container header menu form label input::placeholder {
+  color: white;
+}
+.container header menu form label button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+  margin-left: 7px;
+  margin-top: 3px;
+  position: relative;
+}
+.container header menu .icons {
+  height: auto;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 4px;
+  margin-left: 10px;
+}
+.container header menu .icons svg {
+  cursor: pointer;
+}
+@media screen and (max-width: 1700px) {
+  .container header .h1 a {
+    font-size: 28px;
+  }
+  .container header menu nav {
+    gap: 55px;
+  }
+}
+@media screen and (max-width: 1560px) {
+  .container header {
+    height: 90px;
+    padding: 0 75px 0 46px;
+  }
+  .container header menu {
+    gap: 25px;
+  }
+  .container header menu nav {
+    gap: 45px;
+  }
+  .container header menu nav a {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .container header {
+    padding: 0 30px 0 30px;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .container header {
+    height: 70px;
+  }
+  .container header menu {
+    gap: 25px;
+  }
+  .container header menu nav a {
+    font-size: 13px;
+  }
+  .container header menu nav a::after {
+    height: 2px;
+    bottom: -1px;
+  }
+  .container header menu nav a::before {
+    height: 2px;
+    top: -1px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container header .h1 a {
+    font-size: 23px;
+  }
+  .container header menu nav {
+    gap: 37px;
+  }
+  .container header menu nav a {
+    font-size: 11px;
+  }
+  .container header menu form {
+    width: 120px;
+  }
+  .container header menu .icons {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 970px) {
+  .container header .h1 a {
+    font-size: 20px;
+  }
+  .container header menu nav {
+    gap: 27px;
+  }
+  .container header menu nav a {
+    font-size: 9px;
+  }
+  .container header menu form {
+    width: 60px;
+    height: 15px;
+    margin-top: 5px;
+  }
+  .container header menu form label button {
+    margin-left: 2px;
+  }
+  .container header menu form label input {
+    font-size: 11px;
+  }
+  .container header menu .icons svg {
+    width: 12px;
+    height: 12px;
+    margin-top: 3px;
+  }
+}
+@media screen and (max-width: 870px) {
+  .container header {
+    height: 47px;
+    justify-content: space-evenly;
+  }
+  .container header menu .navBar {
+    display: flex;
+  }
+  .container header menu nav {
+    display: none;
+  }
+  @keyframes a1 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(15px);
+    }
+  }
+  @keyframes a2 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(30px);
+    }
+  }
+  @keyframes a3 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(45px);
+    }
+  }
+  @keyframes a4 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(60px);
+    }
+  }
+  @keyframes a5 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(75px);
+    }
+  }
+  @keyframes a6 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(90px);
+    }
+  }
+  @keyframes a7 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(105px);
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .container header {
+    padding: 0;
+    justify-content: space-between;
+  }
+  .container header .h1 a {
+    font-size: 17px;
+  }
+}
+.container .cards {
+  width: 100%;
+  min-height: 980px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+}
+.container .cards .leftCard {
+  width: 630px;
+  height: 775px;
+  display: flex;
+  flex-direction: column;
+}
+.container .cards .leftCard .head {
+  font-family: inter;
+  font-size: 24px;
+  font-weight: 600;
+  padding-left: 40px;
+  height: 45px;
+  color: #492E1C;
+}
+.container .cards .leftCard .cardItems {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #878080;
+  border-radius: 9px;
+}
+.container .cards .leftCard .cardItems .payMethods {
+  height: 228px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+.container .cards .leftCard .cardItems .payMethods .txt {
+  font-family: inter;
+  font-size: 20px;
+  color: #492E1C;
+  font-weight: 600;
+}
+.container .cards .leftCard .cardItems .payMethods .imgBox {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.container .cards .leftCard .cardItems .payMethods .imgBox img {
+  width: 79px;
+  height: 48px;
+}
+.container .cards .leftCard .inputs {
+  height: 341px;
+  width: 100%;
+  row-gap: 41px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .cards .leftCard .inputs input {
+  width: 413px;
+  height: 43px;
+  border-radius: 25px;
+  border: 1px solid #4C382B;
+  outline: none;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: inter;
+}
+.container .cards .leftCard .inputs input::-moz-placeholder {
+  color: rgba(50, 27, 12, 0.5098039216);
+  font-size: 18px;
+  font-weight: 500;
+  font-family: inter;
+}
+.container .cards .leftCard .inputs input::placeholder {
+  color: rgba(50, 27, 12, 0.5098039216);
+  font-size: 18px;
+  font-weight: 500;
+  font-family: inter;
+}
+.container .cards .leftCard .inputs .flexRow {
+  width: 413px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.container .cards .leftCard .inputs .flexRow .befores {
+  width: 100%;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.container .cards .leftCard .inputs .flexRow .befores span {
+  font-size: 16px;
+  font-family: inter;
+  font-weight: 600;
+  color: rgba(50, 27, 12, 0.7215686275);
+}
+.container .cards .leftCard .inputs .flexRow .befores .cvc2 {
+  width: 120px;
+}
+.container .cards .leftCard .inputs .flexRow .date {
+  width: 235px;
+  height: 43px;
+  display: flex;
+}
+.container .cards .leftCard .inputs .flexRow .cvc {
+  width: 151px;
+  height: 43px;
+}
+.container .cards .leftCard .inputs .errorName {
+  font-size: 18px;
+  font-family: inter;
+  color: red;
+  font-weight: 500;
+}
+.container .cards .leftCard .inputs .errorNums {
+  font-size: 18px;
+  font-family: inter;
+  color: red;
+  font-weight: 500;
+}
+.container .cards .leftCard .inputs .errorDateOrCvc {
+  width: 413px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding-left: 5px;
+  color: red;
+  font-family: inter;
+  font-weight: 900;
+}
+.container .cards .leftCard .inputs .errorDateOrCvc .errorCvc {
+  width: 170px;
+}
+.container .cards .leftCard .buttons {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.container .cards .leftCard .buttons button {
+  height: 43px;
+  border-radius: 25px;
+  outline: none;
+  border: 1px solid #4C382B;
+  font-family: inter;
+  color: #321B0C;
+  width: 122px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 18px;
+}
+.container .cards .leftCard .buttons button:nth-of-type(2) {
+  width: 266px;
+  background-color: #4C382B;
+  color: #ffffff;
+}
+.container .cards .rightCard {
+  width: 630px;
+  height: 775px;
+  display: flex;
+  flex-direction: column;
+}
+.container .cards .rightCard .head {
+  font-family: inter;
+  font-size: 24px;
+  font-weight: 600;
+  padding-left: 40px;
+  height: 45px;
+  color: #492E1C;
+}
+.container .cards .rightCard .cardItems {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #878080;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.container .cards .rightCard .cardItems .bagItems {
+  width: 522px;
+  height: 275px;
+  overflow: auto;
+}
+.container .cards .rightCard .cardItems .bagItems .itemBox {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5019607843);
+}
+.container .cards .rightCard .cardItems .bagItems .itemBox .imgBox {
+  display: flex;
+  align-items: center;
+  width: auto;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+.container .cards .rightCard .cardItems .bagItems .itemBox .imgBox img {
+  width: 62px;
+  height: 71px;
+}
+.container .cards .rightCard .cardItems .bagItems .itemBox .imgBox .itemName {
+  font-family: poppins;
+  font-size: 16px;
+}
+.container .cards .rightCard .cardItems .bagItems .itemBox button {
+  width: 71px;
+  height: 42px;
+  background-color: transparent;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #4C382B;
+  font-family: inter;
+  font-weight: 600;
+  font-size: 16px;
+}
+.container .cards .rightCard .cardItems .tottal {
+  width: 522px;
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  margin-top: 20px;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.5019607843);
+}
+.container .cards .rightCard .cardItems .tottal .total1,
+.container .cards .rightCard .cardItems .tottal .total2,
+.container .cards .rightCard .cardItems .tottal .total3,
+.container .cards .rightCard .cardItems .tottal .total4 {
+  width: 100%;
+  line-height: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-family: inter;
+  font-size: 18px;
+}
+.container .cards .rightCard .cardItems .tottal .total4 {
+  font-weight: 900 !important;
+}
+.container .cards .rightCard .cardItems .successBox {
+  width: 316px;
+  height: 192px;
+  border: 1px solid;
+  margin-top: 20px;
+  border: 1px solid #4B311E;
+  border-radius: 29px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.container .cards .rightCard .cardItems .successBox .check i {
+  font-size: 78px;
+  color: #563F30;
+}
+.container .cards .rightCard .cardItems .successBox .succes {
+  font-size: 32px;
+  color: #563F30;
+  font-weight: 700;
+  font-family: inter;
+}
+.container .cards .rightCard .cardItems .successBox .txt {
+  font-size: 16px;
+  font-family: poppins;
+  color: #563F30;
+}
+@media screen and (max-width: 550px) {
+  .container .cards .leftCard .cardItems .payMethods .imgBox {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  .container .cards .leftCard .inputs {
+    width: 100%;
+  }
+  .container .cards .leftCard .inputs input {
+    width: 273px;
+  }
+  .container .cards .leftCard .inputs .flexRow {
+    width: 273px;
+  }
+  .container .cards .leftCard .inputs .flexRow .befores {
+    width: 100%;
+  }
+  .container .cards .leftCard .inputs .flexRow .befores .cvc2 {
+    width: 80px;
+  }
+  .container .cards .leftCard .inputs .flexRow .date {
+    width: 145px;
+  }
+  .container .cards .leftCard .inputs .flexRow .cvc {
+    width: 110px;
+  }
+  .container .cards .leftCard .inputs .errorDateOrCvc {
+    width: 283px;
+  }
+  .container .cards .leftCard .inputs .errorDateOrCvc .errorCvc {
+    width: 190px;
+  }
+  .container .cards .leftCard .buttons button {
+    width: 82px;
+    font-size: 15px;
+  }
+  .container .cards .leftCard .buttons button:nth-of-type(2) {
+    width: 166px;
+  }
+  .container .cards .rightCard .cardItems .bagItems {
+    width: 99%;
+  }
+  .container .cards .rightCard .cardItems .bagItems .itemBox .imgBox {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  .container .cards .rightCard .cardItems .tottal {
+    width: 99%;
+  }
+  .container .cards .rightCard .cardItems .successBox {
+    width: 266px;
+  }
+}/*# sourceMappingURL=style.css.map */

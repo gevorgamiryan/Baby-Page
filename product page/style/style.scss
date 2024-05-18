@@ -1,0 +1,1383 @@
+@import "../style/_virables.scss";
+@import "../style/_mixins.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+@font-face {
+    font-family: Quattrocento;
+    src: url(../fonts/Quattrocento-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Hind Vadodara;
+    src: url(../fonts/HindVadodara-Regular.ttf);
+}
+
+@font-face {
+    font-family: inter;
+    src: url(../fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: lora;
+    src: url(../fonts/Lora-Regular.ttf);
+}
+
+@font-face {
+    font-family: Merriweather;
+    src: url(../fonts/Merriweather-Regular.ttf);
+}
+
+@font-face {
+    font-family: outfit;
+    src: url(../fonts/Outfit-Regular.ttf);
+}
+
+@font-face {
+    font-family: Miama;
+    src: url(../fonts/Miama-Regular.ttf);
+}
+
+@font-face {
+    font-family: Jomolhari;
+    src: url(../fonts/Jomolhari-Regular.ttf);
+}
+
+
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+    main {
+        width: 1920px;
+        height: auto;
+    }
+}
+
+
+header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 86px;
+    padding-right: 155px;
+    transition: .4s;
+    background-color: #563F30;
+
+    .h1 {
+
+
+        a {
+            color: white;
+            font-family: Merriweather;
+            font-size: 32px;
+            font-weight: 900;
+            position: relative;
+            transition: .4s;
+
+
+        }
+    }
+
+    menu {
+        display: flex;
+        gap: 50px;
+        margin-top: 5px;
+
+        .navBar {
+            display: none;
+            position: relative;
+            width: 20px;
+            height: 15px;
+            cursor: pointer;
+            top: 5px;
+            z-index: 2;
+
+            .navBarSpan {
+                background-color: rgb(0, 0, 0);
+                width: 20px;
+                height: 3px;
+                position: absolute;
+                top: 7px;
+                transform: translate(0, -7px);
+                cursor: pointer;
+                transition: .5s;
+            }
+
+            .navBarSpan:nth-of-type(2) {
+                top: 13px;
+            }
+
+            .navBarSpan:nth-of-type(3) {
+                transform: translate(0, 5px);
+            }
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 65px;
+
+            .fa {
+                display: none;
+                transition: .6s;
+            }
+
+            a {
+                color: #ffffff;
+                font-family: Hind Vadodara;
+                font-size: 16px;
+                font-weight: 400;
+                position: relative;
+                text-transform: uppercase;
+                transition: .4s;
+
+                &::after {
+                    content: "";
+                    height: 3px;
+                    width: 0;
+                    background: linear-gradient(#88442d90, #ffffff, #88442d90);
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    transition: 150ms;
+                }
+
+                &:hover::after {
+                    left: 0;
+                    width: 100%;
+                }
+
+                &::before {
+                    content: "";
+                    height: 3px;
+                    width: 0;
+                    background: linear-gradient(#88442d90, #ffffff, #88442d90);
+                    position: absolute;
+                    top: 0;
+                    transition-duration: 150ms;
+                }
+
+                &:hover::before {
+                    right: 0;
+                    width: 100%;
+                }
+            }
+
+            .space {
+                display: none;
+                backdrop-filter: blur(1px);
+                border-radius: 5px;
+            }
+        }
+
+        .InLeftHandMenu {
+            width: 200px;
+            position: absolute;
+            left: -200px;
+            top: 47px;
+            flex-direction: column;
+            background-color: red;
+            display: flex;
+            z-index: 2;
+            gap: 0;
+            background-color: rgb(107 53 24 / 91%);
+            border-radius: 0 15px 15px 15px;
+            padding: 5px;
+            border: 2px dotted transparent;
+            height: 370px;
+            overflow: hidden;
+            transition: .5s;
+
+            a {
+                font-size: 25px;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+            }
+        }
+
+
+        form {
+            width: 150px;
+            height: 22px;
+            border-radius: 30px;
+            border: 1px solid #ffffff;
+            margin-top: 2px;
+
+            label {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+
+                input {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    font-weight: 100;
+                    outline: none;
+                    font-size: 16px;
+                    font-family: outfit;
+                    padding-bottom: 2px;
+                    border-radius: 10px;
+                    padding-left: 8px;
+                    padding-right: 5px;
+                    margin-right: 1px;
+                    background-color: unset;
+                    color: white;
+
+                    &::placeholder {
+                        color: white;
+                    }
+                }
+
+                button {
+                    background-color: unset;
+                    border: none;
+                    cursor: pointer;
+                    margin-left: 7px;
+                    margin-top: 3px;
+                    position: relative;
+
+                }
+            }
+
+        }
+
+        .icons {
+            height: auto;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            margin-top: 4px;
+            margin-left: 10px;
+
+            svg {
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    @include mediaHeader();
+}
+
+.section1 {
+    width: 100%;
+    height: auto;
+    padding-left: 80px;
+    padding-top: 48px;
+
+    .shopData {
+        width: 1462px;
+        height: 868px;
+
+        .link {
+            font-family: inter;
+            color: #1D1007;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            height: 63px;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 600;
+            font-family: inter;
+            color: #261408;
+        }
+
+        .flexRow {
+            height: 85%;
+            display: flex;
+            column-gap: 74px;
+
+            .options {
+                max-width: 80px;
+                height: 730px;
+                display: flex;
+                flex-direction: column;
+                row-gap: 54px;
+                justify-content: end;
+            }
+
+            .imgDiv {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .shopCard {
+                width: 453px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+
+
+                span {
+                    cursor: pointer;
+
+                    &:nth-of-type(1) {
+                        font-family: poppins;
+                        font-weight: 400;
+                        font-size: 21px;
+
+                        color: #1D1007;
+
+                    }
+
+                    &:nth-of-type(2) {
+                        font-family: Inter;
+                        font-weight: 500;
+                        font-size: 30px;
+                        color: #1D1007;
+
+
+                    }
+
+                    &:nth-of-type(3) {
+                        font-family: Inter;
+                        font-weight: 600;
+                        font-size: 14px;
+                        color: #1D1007;
+
+
+                    }
+
+                    &:nth-of-type(4) {
+                        font-family: Inter;
+                        font-weight: 600;
+                        font-size: 14px;
+                        color: #1D1007;
+
+                        display: flex;
+                        align-items: center;
+
+                    }
+
+                    &:nth-of-type(5) {
+                        font-family: poppins;
+                        font-weight: 400;
+                        font-size: 38px;
+                        color: #1D1007;
+                        display: flex;
+                        align-items: center;
+
+
+                        &::after {
+                            content: "USD 30.80";
+                            font-family: inter;
+                            font-weight: 500;
+                            font-size: 18px;
+                            text-decoration: line-through;
+                            color: #1D1007CF;
+                        }
+                    }
+
+                    &:nth-of-type(6) {
+                        font-family: Inter;
+                        font-weight: 600;
+                        font-size: 18px;
+                        color: #1D1007;
+                        width: 120px;
+
+
+                    }
+
+                    &:nth-of-type(7) {
+                        font-family: Inter;
+                        font-weight: 600;
+                        font-size: 18px;
+                        color: #1D1007;
+
+
+
+                    }
+
+                }
+
+                .colors {
+                    width: auto;
+                    height: auto;
+                    display: flex;
+                    column-gap: 25px;
+
+                    span {
+                        width: 27px;
+                        height: 27px;
+                        border-radius: 50%;
+
+                        &:nth-of-type(1) {
+                            background: #282A39;
+                        }
+
+                        &:nth-of-type(2) {
+                            background: #000000;
+                        }
+
+                        &:nth-of-type(3) {
+                            background: #A5683C;
+                            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #A5683C;
+                        }
+                    }
+                }
+
+                .sizes {
+                    display: flex;
+                    flex-wrap: wrap;
+                    max-width: 280px;
+                    column-gap: 65px;
+                    row-gap: 20px;
+                    margin-bottom: 10px;
+
+                    a {
+                        width: 50px;
+                        color: #1D1007;
+                        font-family: Inter;
+                        font-size: 10.905px;
+                        font-weight: 600;
+                        text-decoration: underline;
+                    }
+                }
+
+                button {
+                    width: 100%;
+                    height: 55px;
+                    font-weight: 800;
+                    font-family: inter;
+                    font-size: 14px;
+                    border: none;
+                    border-radius: 487.087px;
+                    cursor: pointer;
+
+                    &:nth-of-type(1) {
+                        background-color: #73543F;
+                        color: #fff;
+                        margin-top: 20px;
+                    }
+
+                    &:nth-of-type(2) {
+                        border: 1px solid #563F30;
+                        background-color: #fff;
+                        color: #563F30;
+
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    @include mediaSection1();
+}
+
+.section2 {
+
+    width: 100%;
+    height: 734px;
+    display: flex;
+    padding-left: 90px;
+    padding-top: 144px;
+    flex-direction: column;
+
+    .dropdown {
+        width: 900px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        user-select: none;
+
+        .dropdownValue {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #000000;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            padding: 0 25px 0 25px;
+            border-bottom: 1px solid #5F5656;
+            cursor: pointer;
+
+            svg {
+                transform: rotateX(180deg);
+                transition: .5s;
+            }
+        }
+
+        #p {
+            color: #1D1007;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-top: 11px;
+            padding-left: 25px;
+            animation: dropdown 1s both;
+            animation-delay: 200ms;
+            display: block;
+        }
+
+        #ul1 {
+            color: #1D1007;
+            font-family: Inter;
+            font-size: 18px;
+            font-weight: 600;
+            padding-left: 25px;
+            padding-top: 10px;
+            margin-top: 15px;
+            animation: dropdown2 1s both;
+            animation-delay: 50ms;
+            display: block;
+
+            li {
+                color: #1D1007;
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 25px;
+                margin-left: 30px;
+
+                &:nth-last-child(1) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        #ul2 {
+
+            border-bottom: 2px #5F5656CC dashed;
+            border-width: 2px;
+            animation: dropdown3 1s both;
+            color: #1D1007;
+            font-family: Inter;
+            font-size: 18px;
+            font-weight: 600;
+            padding-left: 25px;
+            padding-top: 10px;
+            border-bottom: 2px #5F5656CC dashed;
+            border-width: 2px;
+            animation: dropdown3 1s both;
+            display: block;
+
+            li {
+                color: #1D1007;
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 25px;
+                margin-left: 30px;
+
+                &:nth-last-child(1) {
+                    margin-bottom: 15px;
+                }
+            }
+
+        }
+
+        #subSpan {
+            position: relative;
+            top: 3px;
+
+            sub {
+                font-size: 10px;
+                position: relative;
+                bottom: 2px;
+            }
+        }
+    }
+
+    @include mediaSection2();
+}
+
+.section3 {
+    width: 100%;
+    height: auto;
+
+    .header {
+        width: 100%;
+        height: 84px;
+        background-color: #D8D0CAFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .clothes {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 74px;
+        padding: 0 10px;
+        flex-wrap: wrap;
+
+        .cloth1 {
+            width: 290px;
+            height: 388px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            span {
+                color: #000;
+                font-family: Poppins;
+                font-size: 14.091px;
+                font-weight: 600;
+                line-height: 137.9%;
+                letter-spacing: 0.423px;
+                text-transform: uppercase;
+                position: absolute;
+                top: 11px;
+                left: 0;
+            }
+
+            img {
+                width: 90%;
+                height: 265px;
+            }
+
+            h1 {
+                color: #000;
+                font-family: Poppins;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 137.9%;
+                letter-spacing: 0.08px;
+                text-transform: capitalize;
+
+                &::before {
+                    content: "2 style";
+                    color: #000;
+                    font-family: Poppins;
+                    font-size: 10.568px;
+                    font-weight: 400;
+                    line-height: 137.9%;
+                    letter-spacing: 0.053px;
+                    text-transform: capitalize;
+                    display: flex;
+                }
+
+                &::after {
+                    content: "Baby 2-Piece Hooded Snowsuit";
+                    color: #000;
+                    font-family: Poppins;
+                    font-size: 12.33px;
+
+                    font-weight: 400;
+                    line-height: 137.9%;
+                    letter-spacing: 0.062px;
+                    text-transform: capitalize;
+                    display: flex;
+                }
+            }
+
+            p {
+                color: #000;
+                font-family: Poppins;
+                font-size: 17.614px;
+                font-weight: 600;
+                line-height: 137.9%;
+                letter-spacing: 0.088px;
+                text-transform: capitalize;
+
+                &::after {
+                    content: "$58.99";
+                    color: #655D5D;
+                    font-family: Poppins;
+                    font-size: 13.211px;
+                    font-weight: 600;
+                    line-height: 137.9%;
+                    letter-spacing: 0.066px;
+                    text-decoration: line-through;
+                    text-transform: capitalize;
+                    position: relative;
+                    bottom: 7px;
+                    left: 7px;
+                }
+            }
+
+            div {
+                width: 100%;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+
+                button {
+
+                    width: 130px;
+                    height: 35px;
+                    color: #73543F;
+                    font-family: Inter;
+                    font-size: 11.983px;
+                    font-weight: 600;
+                    letter-spacing: 0.599px;
+                    border-radius: 25.678px;
+                    border: 1.284px solid #73543F;
+                    cursor: pointer;
+                    background-color: unset;
+                }
+            }
+
+            svg {
+                position: absolute;
+                top: 275px;
+                right: 0px;
+                cursor: pointer;
+                stroke: #000;
+            }
+        }
+
+        .cloth2 {
+            width: 290px;
+            height: 388px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            span {
+                color: #000;
+                font-family: Poppins;
+                font-size: 14.091px;
+                font-weight: 600;
+                line-height: 137.9%;
+                letter-spacing: 0.423px;
+                text-transform: uppercase;
+                position: absolute;
+                top: 11px;
+                left: 0;
+            }
+
+            img {
+                width: 71.03%;
+                height: 265px;
+                position: relative;
+                left: 50px;
+            }
+
+            h1 {
+                color: #000000;
+                font-family: Poppins;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 137.9%;
+                letter-spacing: 0.08px;
+                text-transform: capitalize;
+                margin-top: 15px;
+
+                &::before {
+                    content: none;
+                }
+
+                &::after {
+                    content: "Baby 3-Piece Reindeer Outfit Set";
+                    color: #000;
+                    font-family: Poppins;
+                    font-size: 12.33px;
+
+                    font-weight: 400;
+                    line-height: 137.9%;
+                    letter-spacing: 0.062px;
+                    text-transform: capitalize;
+                    display: flex;
+                }
+            }
+
+            p {
+                color: #000;
+                font-family: Poppins;
+                font-size: 17.614px;
+                font-weight: 600;
+                line-height: 137.9%;
+                letter-spacing: 0.088px;
+                text-transform: capitalize;
+
+                &::after {
+                    content: "$18.99";
+                    color: #655D5D;
+                    font-family: Poppins;
+                    font-size: 13.211px;
+                    font-weight: 600;
+                    line-height: 137.9%;
+                    letter-spacing: 0.066px;
+                    text-decoration: line-through;
+                    text-transform: capitalize;
+                    position: relative;
+                    bottom: 7px;
+                    left: 7px;
+                }
+            }
+
+            div {
+                width: 100%;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+
+                button {
+
+                    width: 130px;
+                    height: 35px;
+                    color: #73543F;
+                    font-family: Inter;
+                    font-size: 11.983px;
+                    font-weight: 600;
+                    letter-spacing: 0.599px;
+                    border-radius: 25.678px;
+                    border: 1.284px solid #73543F;
+                    cursor: pointer;
+                    background-color: unset;
+                }
+            }
+
+            svg {
+                position: absolute;
+                top: 275px;
+                right: 0px;
+                cursor: pointer;
+                stroke: #000;
+            }
+        }
+
+        .cloth3 {
+            width: 290px;
+            height: 388px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            span {
+                color: #000;
+                font-family: Poppins;
+                font-size: 14.091px;
+                font-weight: 600;
+                line-height: 137.9%;
+                letter-spacing: 0.423px;
+                text-transform: uppercase;
+                position: absolute;
+                top: 11px;
+            }
+
+            img {
+                width: 94.14%;
+                height: 265px;
+                position: relative;
+                left: 42px;
+            }
+
+            h1 {
+                color: #000000;
+                font-family: Poppins;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 137.9%;
+                letter-spacing: 0.08px;
+                text-transform: capitalize;
+                margin-top: 15px;
+
+                &::before {
+                    content: none;
+                }
+
+                &::after {
+                    content: "Baby 2-Piece Pullover & Jogger Set";
+                    color: #000;
+                    font-family: Poppins;
+                    font-size: 12.33px;
+
+                    font-weight: 400;
+                    line-height: 137.9%;
+                    letter-spacing: 0.062px;
+                    text-transform: capitalize;
+                    display: flex;
+                }
+            }
+
+            p {
+                color: #000;
+                font-family: Poppins;
+                font-size: 17.614px;
+                font-weight: 600;
+                line-height: 137.9%;
+                letter-spacing: 0.088px;
+                text-transform: capitalize;
+
+                &::after {
+                    content: "$19.99";
+                    color: #655D5D;
+                    font-family: Poppins;
+                    font-size: 13.211px;
+                    font-weight: 600;
+                    line-height: 137.9%;
+                    letter-spacing: 0.066px;
+                    text-decoration: line-through;
+                    text-transform: capitalize;
+                    position: relative;
+                    bottom: 7px;
+                    left: 7px;
+                }
+            }
+
+            div {
+                width: 100%;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+
+                button {
+
+                    width: 130px;
+                    height: 35px;
+                    color: #73543F;
+                    font-family: Inter;
+                    font-size: 11.983px;
+                    font-weight: 600;
+                    letter-spacing: 0.599px;
+                    border-radius: 25.678px;
+                    border: 1.284px solid #73543F;
+                    cursor: pointer;
+                    background-color: unset;
+                }
+            }
+
+            svg {
+                position: absolute;
+                top: 275px;
+                right: 0px;
+                cursor: pointer;
+                stroke: #000;
+            }
+        }
+
+        .cloth4 {
+            width: 290px;
+            height: 388px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            span {
+                color: #000;
+                font-family: Poppins;
+                font-size: 14.091px;
+                font-weight: 600;
+                line-height: 137.9%;
+                letter-spacing: 0.423px;
+                text-transform: uppercase;
+                position: absolute;
+                top: 11px;
+                left: 0;
+            }
+
+            img {
+                width: 77.59%;
+                height: 265px;
+                position: relative;
+                left: 30px;
+            }
+
+            h1 {
+                color: #000000;
+                font-family: Poppins;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 137.9%;
+                letter-spacing: 0.08px;
+                text-transform: capitalize;
+
+                &::before {
+                    content: "2 style";
+                    color: #000;
+                    font-family: Poppins;
+                    font-size: 10.568px;
+                    font-weight: 400;
+                    line-height: 137.9%;
+                    letter-spacing: 0.053px;
+                    text-transform: capitalize;
+                    display: flex;
+                }
+
+                &::after {
+                    content: "Baby 3-Piece Little Vest Set";
+                    color: #000;
+                    font-family: Poppins;
+                    font-size: 12.33px;
+
+                    font-weight: 400;
+                    line-height: 137.9%;
+                    letter-spacing: 0.062px;
+                    text-transform: capitalize;
+                    display: flex;
+                }
+            }
+
+            p {
+                color: #000;
+                font-family: Poppins;
+                font-size: 17.614px;
+                font-weight: 600;
+                line-height: 137.9%;
+                letter-spacing: 0.088px;
+                text-transform: capitalize;
+
+                &::after {
+                    content: "$27.99";
+                    color: #655D5D;
+                    font-family: Poppins;
+                    font-size: 13.211px;
+                    font-weight: 600;
+                    line-height: 137.9%;
+                    letter-spacing: 0.066px;
+                    text-decoration: line-through;
+                    text-transform: capitalize;
+                    position: relative;
+                    bottom: 7px;
+                    left: 7px;
+                }
+            }
+
+            div {
+                width: 100%;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+
+                button {
+
+                    width: 130px;
+                    height: 35px;
+                    color: #73543F;
+                    font-family: Inter;
+                    font-size: 11.983px;
+                    font-weight: 600;
+                    letter-spacing: 0.599px;
+                    border-radius: 25.678px;
+                    border: 1.284px solid #73543F;
+                    cursor: pointer;
+                    background-color: unset;
+                }
+            }
+
+            svg {
+                position: absolute;
+                top: 275px;
+                right: 0px;
+                cursor: pointer;
+                stroke: #000;
+            }
+        }
+
+
+        #cloth1 {
+            width: 290px;
+            height: 388px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            span {
+                color: #000;
+                font-family: Poppins;
+                font-size: 14.091px;
+                font-weight: 600;
+                line-height: 137.9%;
+                letter-spacing: 0.423px;
+                text-transform: uppercase;
+                position: absolute;
+                top: 11px;
+                left: 0;
+            }
+
+            img {
+                width: 73.45%;
+                height: 265px;
+                position: relative;
+                left: 43px;
+            }
+
+            h1 {
+                color: #000;
+                font-family: Poppins;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 137.9%;
+                letter-spacing: 0.08px;
+                text-transform: capitalize;
+
+                &::before {
+                    content: "2 style";
+                    color: #000;
+                    font-family: Poppins;
+                    font-size: 10.568px;
+                    font-weight: 400;
+                    line-height: 137.9%;
+                    letter-spacing: 0.053px;
+                    text-transform: capitalize;
+                    display: flex;
+                }
+
+                &::after {
+                    content: "Baby Chunky Knit Button-Front Cardigan";
+                    color: #000;
+                    font-family: Poppins;
+                    font-size: 12.33px;
+
+                    font-weight: 400;
+                    line-height: 137.9%;
+                    letter-spacing: 0.062px;
+                    text-transform: capitalize;
+                    display: flex;
+                }
+            }
+
+            p {
+                color: #000;
+                font-family: Poppins;
+                font-size: 17.614px;
+                font-weight: 600;
+                line-height: 137.9%;
+                letter-spacing: 0.088px;
+                text-transform: capitalize;
+
+                &::after {
+                    content: "$26.99";
+                    color: #655D5D;
+                    font-family: Poppins;
+                    font-size: 13.211px;
+                    font-weight: 600;
+                    line-height: 137.9%;
+                    letter-spacing: 0.066px;
+                    text-decoration: line-through;
+                    text-transform: capitalize;
+                    position: relative;
+                    bottom: 7px;
+                    left: 7px;
+                }
+            }
+
+            div {
+                width: 100%;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+
+                button {
+
+                    width: 130px;
+                    height: 35px;
+                    color: #73543F;
+                    font-family: Inter;
+                    font-size: 11.983px;
+                    font-weight: 600;
+                    letter-spacing: 0.599px;
+                    border-radius: 25.678px;
+                    border: 1.284px solid #73543F;
+                    cursor: pointer;
+                    background-color: unset;
+                }
+            }
+
+            svg {
+                position: absolute;
+                top: 275px;
+                right: 0;
+                cursor: pointer;
+                stroke: #000;
+            }
+
+        }
+    }
+
+    @include mediaSection3();
+}
+
+.section4 {
+    width: $width;
+    height: 473px;
+    @include flex($content: center, $items: center);
+    position: relative;
+    transition: .4s;
+
+    .carousel {
+        width: 100%;
+        @include flex($content: space-between);
+        height: 160px;
+        position: absolute;
+        top: 34%;
+        transition: .4s;
+
+        img {
+            height: 160px;
+            width: calc(100% / 10 - 10px);
+            transition: .4s;
+        }
+    }
+
+    button {
+        width: 341px;
+        height: 70px;
+        background-color: $bgcolor;
+        z-index: 2;
+        border: none;
+        color: #4b311e;
+        font-family: inter;
+        font-size: 18px;
+        cursor: pointer;
+        transition: .4s;
+
+        &:hover {
+            background-color: rgb(216, 216, 216);
+        }
+    }
+
+    @include mediaSection4();
+}
+
+footer {
+    width: $width;
+    height: 246px;
+    background-color: rgba(115, 84, 63, 0.27);
+    @include flex($direction: column, $content: space-between);
+
+    nav {
+        width: $width;
+        height: 100%;
+        @include flex($content: space-around, $items: center);
+
+        .footlogo {
+            font-family: Merriweather;
+            font-size: $fz;
+            font-weight: $fw;
+
+            a {
+                color: #88432d;
+                position: relative;
+
+            }
+        }
+
+        .about {
+            @include flex($direction: column, $items: start);
+
+            h1 {
+                font-size: 17px;
+                font-weight: $fw2;
+                font-family: inter;
+                margin-bottom: 10px;
+                color: $color3;
+            }
+
+            p {
+                @include flex($content: space-between, $direction: column, $items: start);
+                height: 60px;
+
+                a {
+                    color: $color3;
+                    font-family: Inter;
+                    font-size: $fz6;
+                    font-weight: $fw3;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        height: 1px;
+                        width: 0;
+                        background: rgb(255, 255, 255);
+                        position: absolute;
+                        bottom: -2px;
+                        right: 0;
+                        transition: 150ms;
+                    }
+
+                    &:hover::after {
+                        left: 0;
+                        width: 100%;
+                    }
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+
+            }
+        }
+
+        .icons {
+            height: 100px;
+
+            @include flex($direction: column, $items: start, $content: start);
+
+            h1 {
+                font-size: 17px;
+                font-weight: $fw2;
+                font-family: inter;
+                margin-bottom: 20px;
+                color: $color3;
+                margin-bottom: 10px;
+            }
+
+            .soc {
+                @include flex($items: start, $content: start);
+                gap: 21px;
+
+                svg:hover {
+                    opacity: 0.8;
+                }
+
+                img:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+
+    .bottomfooter {
+        @include flex();
+        width: $width;
+        height: 71px;
+        background-color: $color4;
+
+        p {
+            font-size: 12px;
+            color: $bgcolor;
+            font-family: Inter;
+            letter-spacing: 1.44px;
+            font-weight: $fw3;
+
+        }
+    }
+
+    @include mediaFooter();
+}

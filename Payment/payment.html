@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h1 class="h1">
+                <a href="index.html">
+                    HeartBeat
+                </a>
+            </h1>
+            <menu>
+                <div class="navBar" id="handleNavBar">
+                    <span class="navBarSpan"></span>
+                    <span class="navBarSpan"></span>
+                    <span class="navBarSpan"></span>
+                </div>
+                <nav id="nav">
+                    <a id="a1" href="index.html">HOME</a>
+                    <a id="a2" href="../Error Page/Error.html">About us</a>
+                    <a id="a3" href="../clothes-shop/ClothesShop.html">clothes</a>
+                    <a id="a4" href="../Error Page/Error.html">Feeding</a>
+                    <a id="a5" href="../Error Page/Error.html">Care & bath</a>
+                    <a id="a6" href="../Error Page/Error.html">Traveling</a>
+                    <a id="a7" href="../Error Page/Error.html">Toys</a>
+                </nav>
+                <form action="">
+                    <label for="src">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"
+                                fill="none">
+                                <circle cx="4.73443" cy="4.59522" r="3.66273"
+                                    transform="rotate(6.31306 4.73443 4.59522)" stroke="#fff" stroke-opacity="0.76" />
+                                <line x1="7.16605" y1="7.43551" x2="9.94655" y2="10.216" stroke="#fff"
+                                    stroke-opacity="0.76" />
+                            </svg>
+                        </button>
+                        <input type="search" id="src" autocomplete="off" placeholder="Search">
+                    </label>
+                </form>
+                <div class="icons">
+                    <a href="../Shop Bag/Bag.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                            <rect x="0.516216" y="0.516216" width="13.9676" height="14.9676" rx="2.61189" stroke="#fff"
+                                stroke-width="1.03243" />
+                            <path
+                                d="M3.05469 0.75C3.05469 0.75 4.97329 6.78231 5.74074 8.17438C6.50818 9.56645 8.42678 9.56645 9.19422 8.17438C9.96167 6.78231 11.4966 0.75 11.4966 0.75"
+                                stroke="#fff" stroke-width="1.03243" />
+                        </svg>
+                    </a>
+                    <a href="../Error Page/Error.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                            <path
+                                d="M8.5 7.4006C10.5711 7.4006 12.25 5.96778 12.25 4.2003C12.25 2.43282 10.5711 1 8.5 1C6.42893 1 4.75 2.43282 4.75 4.2003C4.75 5.96778 6.42893 7.4006 8.5 7.4006Z"
+                                stroke="#fff" />
+                            <path
+                                d="M16 13.3972C16 15.3854 16 16.9976 8.5 16.9976C1 16.9976 1 15.3854 1 13.3972C1 11.409 4.35812 9.79688 8.5 9.79688C12.6419 9.79688 16 11.409 16 13.3972Z"
+                                stroke="#fff" />
+                        </svg>
+                    </a>
+                </div>
+            </menu>
+        </header>
+        <div class="cards">
+
+            <div class="leftCard">
+                <h1 class="head">
+                    Payment Details
+                </h1>
+                <div class="cardItems">
+                    <div class="payMethods">
+                        <span class="txt">
+                            Metods To Pay
+                        </span>
+                        <div class="imgBox">
+                            <img src="images/e8f9f0ef2362f6b98730a964af14a59d.png" alt="#">
+                            <img src="images/64773779a4b0d1d0a016adabbc3f384d.png" alt="#">
+                            <img src="images/b64680d00ff9d29f4189c7bf3137a7bd.png" alt="#">
+                        </div>
+                    </div>
+                    <div class="inputs">
+                        <input type="text" placeholder="Name of Owner">
+                        <input type="text" placeholder="Card Number" maxlength="19">
+                        <div class="flexRow">
+                            <div class="befores">
+                                <span>Expiration</span>
+                                <span class="cvc2">CVC</span>
+                            </div>
+                            <input type="text" class="date" placeholder="MM/YY" maxlength="7">
+                            <input type="text" class="cvc" placeholder="123" maxlength="3">
+                        </div>
+
+                    </div>
+                    <div class="buttons">
+                        <button id="back"><i class="material-icons">keyboard_arrow_left</i> Back</button>
+                        <button>CONFRIM PAYMENT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="rightCard">
+                <h1 class="head">
+                    Payment Information
+                </h1>
+                <div class="cardItems">
+                    <div class="bagItems">
+
+                    </div>
+                    <div class="tottal">
+                        <div class="total1">Subtotal<span>0</span></div>
+                        <div class="total2">Shipping<span>$0.00</span></div>
+                        <div class="total3">Estimated tax<span>$0.00</span></div>
+                        <div class="total4">Order total<span>0</span></div>
+                    </div>
+                    <div class="successBox">
+                        <p class="check"><i class="material-icons">check</i></p>
+                        <p class="succes">SUCCESS</p>
+                        <p class="txt">YOUR PAYMENT WAS PROVIDED</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script/script.js"></script>
+    <script src="script/navBar.js"></script>
+</body>
+
+</html>

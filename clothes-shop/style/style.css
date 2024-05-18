@@ -1,0 +1,2401 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: Quattrocento;
+  src: url(../fonts/Quattrocento-Regular.ttf);
+}
+@font-face {
+  font-family: poppins;
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: Hind Vadodara;
+  src: url(../fonts/HindVadodara-Regular.ttf);
+}
+@font-face {
+  font-family: inter;
+  src: url(../fonts/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: lora;
+  src: url(../fonts/Lora-Regular.ttf);
+}
+@font-face {
+  font-family: Merriweather;
+  src: url(../fonts/Merriweather-Regular.ttf);
+}
+@font-face {
+  font-family: outfit;
+  src: url(../fonts/Outfit-Regular.ttf);
+}
+@font-face {
+  font-family: Miama;
+  src: url(../fonts/Miama-Regular.ttf);
+}
+@font-face {
+  font-family: Jomolhari;
+  src: url(../fonts/Jomolhari-Regular.ttf);
+}
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.container main {
+  width: 1920px;
+  height: auto;
+}
+.container .item {
+  cursor: pointer;
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 86px;
+  padding-right: 155px;
+  transition: 0.4s;
+}
+header .h1 a {
+  color: #88432D;
+  font-family: Merriweather;
+  font-size: 32px;
+  font-weight: 900;
+  position: relative;
+  transition: 0.4s;
+}
+header menu {
+  display: flex;
+  gap: 50px;
+  margin-top: 5px;
+}
+header menu .navBar {
+  display: none;
+  position: relative;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  top: 5px;
+  z-index: 2;
+}
+header menu .navBar .navBarSpan {
+  background-color: rgb(0, 0, 0);
+  width: 20px;
+  height: 3px;
+  position: absolute;
+  top: 7px;
+  transform: translate(0, -7px);
+  cursor: pointer;
+  transition: 0.5s;
+}
+header menu .navBar .navBarSpan:nth-of-type(2) {
+  top: 13px;
+}
+header menu .navBar .navBarSpan:nth-of-type(3) {
+  transform: translate(0, 5px);
+}
+header menu nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+}
+header menu nav .fa {
+  display: none;
+  transition: 0.6s;
+}
+header menu nav a {
+  color: #88432D;
+  font-family: Hind Vadodara;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+header menu nav a:nth-of-type(3) {
+  display: flex;
+  position: relative;
+}
+header menu nav a:nth-of-type(3)::after {
+  content: "";
+  display: flex;
+  width: 100%;
+  background: #492E1C;
+  height: 2px;
+  position: absolute;
+  bottom: 1px;
+}
+header menu nav a:nth-of-type(3)::before {
+  content: none;
+}
+header menu nav a::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: linear-gradient(rgba(136, 68, 45, 0.5647058824), #ffffff, rgba(136, 68, 45, 0.5647058824));
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: 150ms;
+}
+header menu nav a:hover::after {
+  left: 0;
+  width: 100%;
+}
+header menu nav a::before {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: linear-gradient(rgba(136, 68, 45, 0.5647058824), #ffffff, rgba(136, 68, 45, 0.5647058824));
+  position: absolute;
+  top: 0;
+  transition-duration: 150ms;
+}
+header menu nav a:hover::before {
+  right: 0;
+  width: 100%;
+}
+header menu nav .space {
+  display: none;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  border-radius: 5px;
+}
+header menu .InLeftHandMenu {
+  width: 200px;
+  position: absolute;
+  left: -200px;
+  top: 47px;
+  flex-direction: column;
+  display: flex;
+  z-index: 2;
+  gap: 0;
+  background-color: rgba(116, 116, 116, 0.91);
+  border-radius: 0 15px 15px 15px;
+  padding: 5px;
+  border: 2px dotted transparent;
+  height: 370px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+header menu .InLeftHandMenu a {
+  font-size: 25px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: white;
+}
+header menu .InLeftHandMenu a::after {
+  transition: ease 0.35s;
+}
+header menu .InLeftHandMenu a::before {
+  transition: ease 0.35s;
+}
+header menu form {
+  width: 150px;
+  height: 22px;
+  border-radius: 30px;
+  border: 1px solid #88432D;
+  margin-top: 2px;
+}
+header menu form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+header menu form label input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-weight: 100;
+  outline: none;
+  font-size: 16px;
+  font-family: outfit;
+  padding-bottom: 2px;
+  border-radius: 10px;
+  padding-left: 8px;
+  padding-right: 5px;
+  margin-right: 1px;
+  background-color: unset;
+  color: #88432D;
+}
+header menu form label input::-moz-placeholder {
+  color: #88432D;
+}
+header menu form label input::placeholder {
+  color: #88432D;
+}
+header menu form label button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+  margin-left: 7px;
+  margin-top: 3px;
+  position: relative;
+}
+header menu .icons {
+  height: auto;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 4px;
+  margin-left: 10px;
+}
+header menu .icons svg {
+  cursor: pointer;
+}
+header menu .icons a:nth-of-type(1) {
+  width: 45px;
+}
+@media screen and (max-width: 1700px) {
+  header .h1 a {
+    font-size: 28px;
+  }
+  header menu nav {
+    gap: 55px;
+  }
+}
+@media screen and (max-width: 1560px) {
+  header {
+    height: 90px;
+    padding: 0 75px 0 46px;
+  }
+  header menu {
+    gap: 25px;
+  }
+  header menu nav {
+    gap: 45px;
+  }
+  header menu nav a {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  header {
+    padding: 0 30px 0 30px;
+  }
+}
+@media screen and (max-width: 1260px) {
+  header {
+    height: 70px;
+  }
+  header menu {
+    gap: 25px;
+  }
+  header menu nav a {
+    font-size: 13px;
+  }
+  header menu nav a::after {
+    height: 2px;
+    bottom: -1px;
+  }
+  header menu nav a::before {
+    height: 2px;
+    top: -1px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  header .h1 a {
+    font-size: 23px;
+  }
+  header menu nav {
+    gap: 37px;
+  }
+  header menu nav a {
+    font-size: 11px;
+  }
+  header menu form {
+    width: 120px;
+  }
+  header menu .icons {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 970px) {
+  header .h1 a {
+    font-size: 20px;
+  }
+  header menu nav {
+    gap: 27px;
+  }
+  header menu nav a {
+    font-size: 9px;
+  }
+  header menu form {
+    width: 60px;
+    height: 15px;
+    margin-top: 5px;
+  }
+  header menu form label button {
+    margin-left: 2px;
+  }
+  header menu form label input {
+    font-size: 11px;
+  }
+  header menu .icons svg {
+    width: 12px;
+    height: 12px;
+    margin-top: 3px;
+  }
+}
+@media screen and (max-width: 870px) {
+  header {
+    height: 47px;
+    justify-content: space-evenly;
+  }
+  header menu .navBar {
+    display: flex;
+  }
+  header menu nav {
+    transition-delay: 2000ms;
+    display: none;
+  }
+  @keyframes a1 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(15px);
+    }
+  }
+  @keyframes a2 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(30px);
+    }
+  }
+  @keyframes a3 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(45px);
+    }
+  }
+  @keyframes a4 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(60px);
+    }
+  }
+  @keyframes a5 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(75px);
+    }
+  }
+  @keyframes a6 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(90px);
+    }
+  }
+  @keyframes a7 {
+    0% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(105px);
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  header {
+    padding: 0;
+    justify-content: space-between;
+  }
+  header .h1 a {
+    font-size: 17px;
+  }
+}
+
+.section1 {
+  width: 100%;
+  height: 570px;
+  background-image: url(../images/Cute\ baby\ with\ stuffed\ animal.png);
+  background-size: 100% 100%;
+}
+.section1 div {
+  width: 283px;
+  height: 64px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  text-transform: uppercase;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 900;
+}
+.section1 div span {
+  font-size: 10px;
+  position: relative;
+  bottom: 2px;
+}
+@media screen and (max-width: 1260px) {
+  .section1 {
+    height: 500px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .section1 {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .section1 {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .section1 {
+    height: 240px;
+  }
+  .section1 div {
+    width: 200px;
+    font-size: 13px;
+    height: 44px;
+  }
+}
+
+.section2 {
+  width: 100%;
+  height: 488px;
+  display: flex;
+  flex-direction: column;
+}
+.section2 .h1 {
+  width: 100%;
+  height: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.section2 .h1 span {
+  color: #492E1C;
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 600;
+}
+.section2 .h1 span::after {
+  content: "+100 item";
+  color: #492E1C;
+  text-align: justify;
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 300;
+  position: relative;
+  bottom: 4px;
+}
+.section2 .parag {
+  height: 73px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #321B0C;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.64px;
+}
+.section2 .elipses {
+  height: 268px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 50px;
+}
+.section2 .elipses .elipse1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: auto;
+  height: 195px;
+}
+.section2 .elipses .elipse1 span {
+  color: #4B311E;
+  font-family: Inter;
+  font-size: 17.444px;
+  font-weight: 600;
+}
+@media screen and (max-width: 1585px) {
+  .section2 .elipses {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 1370px) {
+  .section2 .elipses {
+    gap: 0;
+  }
+  .section2 .elipses .elipse1 img {
+    width: 130px;
+    height: 130px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .section2 {
+    text-wrap: balance;
+    text-align: center;
+  }
+  .section2 .h1 span {
+    font-size: 25px;
+  }
+  .section2 .elipses .elipse1 img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 905px) {
+  .section2 {
+    height: 388px;
+  }
+  .section2 .parag {
+    font-size: 13px;
+  }
+  .section2 .elipses {
+    height: 168px;
+  }
+  .section2 .elipses .elipse1 {
+    height: auto;
+  }
+  .section2 .elipses .elipse1 span {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .section2 .parag {
+    margin-top: 30px;
+  }
+}
+
+.section3 {
+  width: 100%;
+  height: auto;
+}
+.section3 .sizes {
+  width: 100%;
+  height: 240px;
+  background: rgba(115, 84, 63, 0.27);
+  display: flex;
+  flex-direction: column;
+}
+.section3 .sizes .sizesTitle {
+  width: 518px;
+  height: 100px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  color: #492E1C;
+  font-family: Inter;
+  font-size: 43.529px;
+  font-weight: 600;
+}
+.section3 .sizes .sizesParag {
+  width: 526px;
+  height: 70px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: #73543F;
+  font-family: Inter;
+  font-size: 14.51px;
+  font-weight: 400;
+  letter-spacing: 1.741px;
+}
+.section3 .sizes .sizeButtons {
+  width: 800px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 15px;
+}
+.section3 .sizes .sizeButtons .sizeBtn {
+  border-radius: 18.137px;
+  background: #73543F;
+  width: 76.175px;
+  height: 36.274px;
+  border: none;
+  cursor: pointer;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 14.51px;
+  text-transform: uppercase;
+  transition: 0.8s;
+}
+.section3 .sizes .sizeButtons .sizeBtn:hover {
+  box-shadow: 1px 1px 3px 1px black, inset 0px 0px 14px -3px #fff;
+}
+.section3 menu {
+  width: 100%;
+  height: 70px;
+  border: 1px solid #4B311E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section3 menu nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 85px;
+  flex-wrap: wrap;
+}
+.section3 menu nav a {
+  color: #492E1C;
+  font-family: Inter;
+  font-size: 14.51px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.section3 menu nav a svg {
+  position: relative;
+  bottom: 1px;
+}
+.section3 .lines {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 130px 10px;
+}
+.section3 .lines .clothes {
+  width: 1521px;
+  height: 908px;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  row-gap: 130px;
+}
+.section3 .lines .clothes #cloth1 {
+  width: 290px;
+  height: 388px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.section3 .lines .clothes #cloth1 span {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14.091px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.423px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 11px;
+  left: 0;
+}
+.section3 .lines .clothes #cloth1 img {
+  width: 73.45%;
+  height: 270px;
+  position: relative;
+  left: 43px;
+}
+.section3 .lines .clothes #cloth1 h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.08px;
+  text-transform: capitalize;
+}
+.section3 .lines .clothes #cloth1 h1::before {
+  content: "2 style";
+  color: #000;
+  font-family: Poppins;
+  font-size: 10.568px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.053px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth1 h1::after {
+  content: "Baby Chunky Knit Button-Front Cardigan";
+  color: #000;
+  font-family: Poppins;
+  font-size: 12.33px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.062px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth1 p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17.614px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.088px;
+  text-transform: capitalize;
+}
+.section3 .lines .clothes #cloth1 p::after {
+  content: "$26.99";
+  color: #655D5D;
+  font-family: Poppins;
+  font-size: 13.211px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.066px;
+  text-decoration: line-through;
+  text-transform: capitalize;
+  position: relative;
+  bottom: 7px;
+  left: 7px;
+}
+.section3 .lines .clothes #cloth1 div {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.section3 .lines .clothes #cloth1 div button {
+  width: 130px;
+  height: 35px;
+  color: #73543F;
+  font-family: Inter;
+  font-size: 11.983px;
+  font-weight: 600;
+  letter-spacing: 0.599px;
+  border-radius: 25.678px;
+  border: 1.284px solid #73543F;
+  cursor: pointer;
+  background-color: unset;
+}
+.section3 .lines .clothes #cloth1 .svgDiv {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: unset;
+  top: 275px;
+  cursor: pointer;
+}
+.section3 .lines .clothes #cloth1 .fa-heart {
+  color: red;
+}
+.section3 .lines .clothes #cloth2 {
+  width: 290px;
+  height: 388px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.section3 .lines .clothes #cloth2 span {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14.091px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.423px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 11px;
+  left: 0;
+}
+.section3 .lines .clothes #cloth2 img {
+  width: 88.97%;
+  height: 265px;
+  position: relative;
+  left: 10px;
+}
+.section3 .lines .clothes #cloth2 h1 {
+  color: #000000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.08px;
+  text-transform: capitalize;
+  margin-top: 20px;
+}
+.section3 .lines .clothes #cloth2 h1::after {
+  content: "Baby 3-Piece Fleece Pullover Set";
+  color: #000;
+  font-family: Poppins;
+  font-size: 12.33px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.062px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth2 p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17.614px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.088px;
+  text-transform: capitalize;
+}
+.section3 .lines .clothes #cloth2 p::after {
+  content: "$17.99";
+  color: #655D5D;
+  font-family: Poppins;
+  font-size: 13.211px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.066px;
+  text-decoration: line-through;
+  text-transform: capitalize;
+  position: relative;
+  bottom: 7px;
+  left: 7px;
+}
+.section3 .lines .clothes #cloth2 div {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+}
+.section3 .lines .clothes #cloth2 div button {
+  width: 130px;
+  height: 35px;
+  color: #73543F;
+  font-family: Inter;
+  font-size: 11.983px;
+  font-weight: 600;
+  letter-spacing: 0.599px;
+  border-radius: 25.678px;
+  border: 1.284px solid #73543F;
+  cursor: pointer;
+  background-color: unset;
+}
+.section3 .lines .clothes #cloth2 .svgDiv {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: unset;
+  top: 275px;
+  cursor: pointer;
+}
+.section3 .lines .clothes #cloth2 .fa-heart {
+  color: red;
+}
+.section3 .lines .clothes #cloth3 {
+  width: 290px;
+  height: 388px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.section3 .lines .clothes #cloth3 span {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14.091px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.423px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 11px;
+  left: 0;
+}
+.section3 .lines .clothes #cloth3 img {
+  width: 97.93%;
+  height: 270px;
+  position: relative;
+}
+.section3 .lines .clothes #cloth3 h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.08px;
+  text-transform: capitalize;
+}
+.section3 .lines .clothes #cloth3 h1::before {
+  content: "2 style";
+  color: #000;
+  font-family: Poppins;
+  font-size: 10.568px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.053px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth3 h1::after {
+  content: "Baby 3-Piece Fleece Pullover Set";
+  color: #000;
+  font-family: Poppins;
+  font-size: 12.33px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.062px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth3 p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17.614px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.088px;
+  text-transform: capitalize;
+}
+.section3 .lines .clothes #cloth3 p::after {
+  content: "$16.99";
+  color: #655D5D;
+  font-family: Poppins;
+  font-size: 13.211px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.066px;
+  text-decoration: line-through;
+  text-transform: capitalize;
+  position: relative;
+  bottom: 7px;
+  left: 7px;
+}
+.section3 .lines .clothes #cloth3 div {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+}
+.section3 .lines .clothes #cloth3 div button {
+  width: 130px;
+  height: 35px;
+  color: #73543F;
+  font-family: Inter;
+  font-size: 11.983px;
+  font-weight: 600;
+  letter-spacing: 0.599px;
+  border-radius: 25.678px;
+  border: 1.284px solid #73543F;
+  cursor: pointer;
+  background-color: unset;
+}
+.section3 .lines .clothes #cloth3 .svgDiv {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: unset;
+  top: 275px;
+  cursor: pointer;
+}
+.section3 .lines .clothes #cloth3 .fa-heart {
+  color: red;
+}
+.section3 .lines .clothes #cloth4 {
+  width: 290px;
+  height: 388px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.section3 .lines .clothes #cloth4 span {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14.091px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.423px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 11px;
+  left: 0;
+}
+.section3 .lines .clothes #cloth4 img {
+  width: 72.76%;
+  height: 270px;
+  position: relative;
+  left: 43px;
+}
+.section3 .lines .clothes #cloth4 h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.08px;
+  text-transform: capitalize;
+  margin-top: 5px;
+}
+.section3 .lines .clothes #cloth4 h1::before {
+  content: "3 style";
+  color: #000;
+  font-family: Poppins;
+  font-size: 10.568px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.053px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth4 h1::after {
+  content: "Baby 3-Piece Fleece Pullover Set";
+  color: #000;
+  font-family: Poppins;
+  font-size: 12.33px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.062px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth4 p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17.614px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.088px;
+  text-transform: capitalize;
+}
+.section3 .lines .clothes #cloth4 p::after {
+  content: "$20.99";
+  color: #655D5D;
+  font-family: Poppins;
+  font-size: 13.211px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.066px;
+  text-decoration: line-through;
+  text-transform: capitalize;
+  position: relative;
+  bottom: 7px;
+  left: 7px;
+}
+.section3 .lines .clothes #cloth4 div {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+}
+.section3 .lines .clothes #cloth4 div button {
+  width: 130px;
+  height: 35px;
+  color: #73543F;
+  font-family: Inter;
+  font-size: 11.983px;
+  font-weight: 600;
+  letter-spacing: 0.599px;
+  border-radius: 25.678px;
+  border: 1.284px solid #73543F;
+  cursor: pointer;
+  background-color: unset;
+}
+.section3 .lines .clothes #cloth4 .svgDiv {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: unset;
+  top: 275px;
+  cursor: pointer;
+}
+.section3 .lines .clothes #cloth4 .fa-heart {
+  color: red;
+}
+.section3 .lines .clothes #cloth5 {
+  width: 290px;
+  height: 388px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.section3 .lines .clothes #cloth5 span {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14.091px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.423px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 11px;
+  left: 0;
+}
+.section3 .lines .clothes #cloth5 img {
+  width: 72.76%;
+  height: 270px;
+  position: relative;
+  left: 43px;
+}
+.section3 .lines .clothes #cloth5 h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.08px;
+  text-transform: capitalize;
+  margin-top: 5px;
+}
+.section3 .lines .clothes #cloth5 h1::before {
+  content: "2 style";
+  color: #000;
+  font-family: Poppins;
+  font-size: 10.568px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.053px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth5 h1::after {
+  content: "Baby 2-Piece Hooded Snowsuit";
+  color: #000;
+  font-family: Poppins;
+  font-size: 12.33px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.062px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth5 p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17.614px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.088px;
+  text-transform: capitalize;
+}
+.section3 .lines .clothes #cloth5 p::after {
+  content: "$58.99";
+  color: #655D5D;
+  font-family: Poppins;
+  font-size: 13.211px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.066px;
+  text-decoration: line-through;
+  text-transform: capitalize;
+  position: relative;
+  bottom: 7px;
+  left: 7px;
+}
+.section3 .lines .clothes #cloth5 div {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+}
+.section3 .lines .clothes #cloth5 div button {
+  width: 130px;
+  height: 35px;
+  color: #73543F;
+  font-family: Inter;
+  font-size: 11.983px;
+  font-weight: 600;
+  letter-spacing: 0.599px;
+  border-radius: 25.678px;
+  border: 1.284px solid #73543F;
+  cursor: pointer;
+  background-color: unset;
+}
+.section3 .lines .clothes #cloth5 .svgDiv {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: unset;
+  top: 275px;
+  cursor: pointer;
+}
+.section3 .lines .clothes #cloth5 .fa-heart {
+  color: red;
+}
+.section3 .lines .clothes #cloth6 {
+  width: 290px;
+  height: 388px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.section3 .lines .clothes #cloth6 span {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14.091px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.423px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 11px;
+  left: 0;
+}
+.section3 .lines .clothes #cloth6 img {
+  width: 72.76%;
+  height: 270px;
+  position: relative;
+  left: 43px;
+}
+.section3 .lines .clothes #cloth6 h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.08px;
+  text-transform: capitalize;
+  margin-top: 5px;
+}
+.section3 .lines .clothes #cloth6 h1::before {
+  content: "2 style";
+  color: transparent;
+  font-family: Poppins;
+  font-size: 10.568px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.053px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth6 h1::after {
+  content: "Baby 3-Piece Reindeer Outfit Set";
+  color: #000;
+  font-family: Poppins;
+  font-size: 12.33px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.062px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth6 p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17.614px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.088px;
+  text-transform: capitalize;
+}
+.section3 .lines .clothes #cloth6 p::after {
+  content: "$18.99";
+  color: #655D5D;
+  font-family: Poppins;
+  font-size: 13.211px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.066px;
+  text-decoration: line-through;
+  text-transform: capitalize;
+  position: relative;
+  bottom: 7px;
+  left: 7px;
+}
+.section3 .lines .clothes #cloth6 div {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+}
+.section3 .lines .clothes #cloth6 div button {
+  width: 130px;
+  height: 35px;
+  color: #73543F;
+  font-family: Inter;
+  font-size: 11.983px;
+  font-weight: 600;
+  letter-spacing: 0.599px;
+  border-radius: 25.678px;
+  border: 1.284px solid #73543F;
+  cursor: pointer;
+  background-color: unset;
+}
+.section3 .lines .clothes #cloth6 .svgDiv {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: unset;
+  top: 275px;
+  cursor: pointer;
+}
+.section3 .lines .clothes #cloth6 .fa-heart {
+  color: red;
+}
+.section3 .lines .clothes #cloth7 {
+  width: 290px;
+  height: 388px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.section3 .lines .clothes #cloth7 span {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14.091px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.423px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 11px;
+  left: 0;
+}
+.section3 .lines .clothes #cloth7 img {
+  width: 72.76%;
+  height: 270px;
+  position: relative;
+  left: 43px;
+}
+.section3 .lines .clothes #cloth7 h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.08px;
+  text-transform: capitalize;
+  margin-top: 5px;
+}
+.section3 .lines .clothes #cloth7 h1::before {
+  content: "2 style";
+  color: transparent;
+  font-family: Poppins;
+  font-size: 10.568px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.053px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth7 h1::after {
+  content: "Baby 2-Piece Pullover & Jogger Set";
+  color: #000;
+  font-family: Poppins;
+  font-size: 12.33px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.062px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth7 p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17.614px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.088px;
+  text-transform: capitalize;
+}
+.section3 .lines .clothes #cloth7 p::after {
+  content: "$19 .99";
+  color: #655D5D;
+  font-family: Poppins;
+  font-size: 13.211px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.066px;
+  text-decoration: line-through;
+  text-transform: capitalize;
+  position: relative;
+  bottom: 7px;
+  left: 7px;
+}
+.section3 .lines .clothes #cloth7 div {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+}
+.section3 .lines .clothes #cloth7 div button {
+  width: 130px;
+  height: 35px;
+  color: #73543F;
+  font-family: Inter;
+  font-size: 11.983px;
+  font-weight: 600;
+  letter-spacing: 0.599px;
+  border-radius: 25.678px;
+  border: 1.284px solid #73543F;
+  cursor: pointer;
+  background-color: unset;
+}
+.section3 .lines .clothes #cloth7 .svgDiv {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: unset;
+  top: 275px;
+  cursor: pointer;
+}
+.section3 .lines .clothes #cloth7 .fa-heart {
+  color: red;
+}
+.section3 .lines .clothes #cloth8 {
+  width: 290px;
+  height: 388px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.section3 .lines .clothes #cloth8 span {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14.091px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.423px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 11px;
+  left: 0;
+}
+.section3 .lines .clothes #cloth8 img {
+  width: 72.76%;
+  height: 270px;
+  position: relative;
+  left: 43px;
+}
+.section3 .lines .clothes #cloth8 h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.08px;
+  text-transform: capitalize;
+  margin-top: 5px;
+}
+.section3 .lines .clothes #cloth8 h1::before {
+  content: "2 style";
+  color: #000;
+  font-family: Poppins;
+  font-size: 10.568px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.053px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth8 h1::after {
+  content: "Baby 3-Piece Little Vest Set";
+  color: #000;
+  font-family: Poppins;
+  font-size: 12.33px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.062px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section3 .lines .clothes #cloth8 p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17.614px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.088px;
+  text-transform: capitalize;
+}
+.section3 .lines .clothes #cloth8 p::after {
+  content: "$27.99";
+  color: #655D5D;
+  font-family: Poppins;
+  font-size: 13.211px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.066px;
+  text-decoration: line-through;
+  text-transform: capitalize;
+  position: relative;
+  bottom: 7px;
+  left: 7px;
+}
+.section3 .lines .clothes #cloth8 div {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+}
+.section3 .lines .clothes #cloth8 div button {
+  width: 130px;
+  height: 35px;
+  color: #73543F;
+  font-family: Inter;
+  font-size: 11.983px;
+  font-weight: 600;
+  letter-spacing: 0.599px;
+  border-radius: 25.678px;
+  border: 1.284px solid #73543F;
+  cursor: pointer;
+  background-color: unset;
+}
+.section3 .lines .clothes #cloth8 .svgDiv {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: unset;
+  top: 275px;
+  cursor: pointer;
+}
+.section3 .lines .clothes #cloth8 .fa-heart {
+  color: red;
+}
+@media screen and (max-width: 1665px) {
+  .section3 menu nav {
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 1285px) {
+  .section3 menu nav {
+    gap: 20px;
+  }
+  .section3 menu nav a {
+    font-size: 11px;
+  }
+  .section3 menu nav a svg {
+    bottom: 0px;
+    width: 10px;
+    height: 10px;
+  }
+}
+@media screen and (max-width: 1590px) {
+  .section3 .lines {
+    height: auto;
+  }
+  .section3 .lines .clothes {
+    height: auto;
+    width: 100%;
+  }
+  .section3 .lines .clothes .cloth1 svg,
+  .section3 .lines .clothes .cloth2 svg,
+  .section3 .lines .clothes .cloth3 svg,
+  .section3 .lines .clothes .cloth4 svg,
+  .section3 .lines .clothes #cloth1 svg,
+  .section3 .lines .clothes #cloth2 svg,
+  .section3 .lines .clothes #clth3 svg,
+  .section3 .lines .clothes #cloth4 svg {
+    left: unset;
+    right: 0;
+  }
+  .section3 .lines .clothes .cloth3 img {
+    left: 17px;
+  }
+}
+@media screen and (max-width: 905px) {
+  .section3 .sizes {
+    height: 170px;
+  }
+  .section3 .sizes .sizesTitle {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    justify-content: center;
+    font-size: 23px;
+  }
+  .section3 .sizes .sizesParag {
+    width: 100%;
+    justify-content: center;
+  }
+  .section3 .sizes .sizeButtons {
+    width: 100%;
+    justify-content: center;
+  }
+  .section3 .sizes .sizeButtons .sizeBtn {
+    width: 46.175px;
+    height: 26.274px;
+    font-size: 11.51px;
+  }
+  .section3 menu nav {
+    gap: 10px;
+  }
+  .section3 menu nav a {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 670px) {
+  .section3 menu nav {
+    gap: 5px;
+  }
+  .section3 menu nav a svg {
+    width: 4px;
+    height: 4px;
+  }
+}
+@media screen and (max-width: 673px) {
+  .section3 .lines .clothes .cloth1,
+  .section3 .lines .clothes .cloth2,
+  .section3 .lines .clothes .cloth3,
+  .section3 .lines .clothes .cloth4 {
+    width: 200px;
+    height: 288px;
+  }
+  .section3 .lines .clothes .cloth1 h1,
+  .section3 .lines .clothes .cloth2 h1,
+  .section3 .lines .clothes .cloth3 h1,
+  .section3 .lines .clothes .cloth4 h1 {
+    margin-top: 0;
+  }
+  .section3 .lines .clothes .cloth1 svg,
+  .section3 .lines .clothes .cloth2 svg,
+  .section3 .lines .clothes .cloth3 svg,
+  .section3 .lines .clothes .cloth4 svg {
+    top: 65%;
+  }
+  .section3 .lines .clothes .cloth1 span,
+  .section3 .lines .clothes .cloth2 span,
+  .section3 .lines .clothes .cloth3 span,
+  .section3 .lines .clothes .cloth4 span {
+    right: unset;
+    left: 0;
+  }
+  .section3 .lines .clothes #cloth1,
+  .section3 .lines .clothes #cloth2,
+  .section3 .lines .clothes #cloth3,
+  .section3 .lines .clothes #cloth4 {
+    width: 200px;
+    height: 288px;
+  }
+  .section3 .lines .clothes #cloth1 h1,
+  .section3 .lines .clothes #cloth2 h1,
+  .section3 .lines .clothes #cloth3 h1,
+  .section3 .lines .clothes #cloth4 h1 {
+    margin-top: 0;
+  }
+  .section3 .lines .clothes #cloth1 svg,
+  .section3 .lines .clothes #cloth2 svg,
+  .section3 .lines .clothes #cloth3 svg,
+  .section3 .lines .clothes #cloth4 svg {
+    top: 65%;
+    right: 0;
+  }
+  .section3 .lines .clothes #cloth1 span,
+  .section3 .lines .clothes #cloth2 span,
+  .section3 .lines .clothes #cloth3 span,
+  .section3 .lines .clothes #cloth4 span {
+    right: unset;
+    left: 0;
+  }
+  .section3 .lines .clothes .cloth2 h1::before,
+  .section3 .lines .clothes .cloth3 h1::before {
+    content: "a";
+    display: flex;
+    font-size: 11.5px;
+    line-height: 137.9%;
+    color: rgba(240, 248, 255, 0);
+  }
+  .section3 .lines .clothes .cloth2 h1::after,
+  .section3 .lines .clothes .cloth3 h1::after {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .section3 .sizes .sizesTitle {
+    font-size: 20px;
+  }
+  .section3 .sizes .sizesParag {
+    font-size: 11px;
+  }
+  .section3 .sizes .sizeButtons .sizeBtn {
+    width: 26.175px;
+    height: 21.274px;
+    font-size: 8.51px;
+  }
+  .section3 .lines .clothes {
+    justify-content: center;
+  }
+}
+
+.section4 .lineNewCollection {
+  width: 100%;
+  height: 76px;
+  background: rgba(115, 84, 63, 0.27);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section4 .lineNewCollection h1 {
+  color: #492E1C;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 600;
+}
+.section4 .newCollection {
+  width: 100%;
+  height: 662px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 97px;
+  align-items: center;
+}
+.section4 .newCollection .newClothes {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  flex-wrap: wrap;
+}
+.section4 .newCollection .newClothes .newCloth {
+  width: 330px;
+  height: 400px;
+  border: 0.856px solid #73543F;
+  padding-bottom: 11px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 15px;
+}
+.section4 .newCollection .newClothes .newCloth .imgDiv {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.section4 .newCollection .newClothes .newCloth .imgDiv span {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13.695px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.068px;
+  text-transform: capitalize;
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+.section4 .newCollection .newClothes .newCloth .imgDiv img {
+  width: 53.32%;
+  height: 90%;
+  position: absolute;
+  left: 68px;
+}
+.section4 .newCollection .newClothes .newCloth h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.08px;
+  text-transform: capitalize;
+}
+.section4 .newCollection .newClothes .newCloth p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 11.983px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.06px;
+  text-transform: capitalize;
+}
+.section4 .newCollection .newClothes .newCloth p::after {
+  content: "$9.99";
+  color: #000;
+  font-family: Poppins;
+  font-size: 17.118px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.086px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section4 .newCollection .newClothes .newCloth .heartIcon {
+  position: absolute;
+  bottom: 85px;
+  right: 3px;
+  cursor: pointer;
+}
+.section4 .newCollection .newClothes .newCloth .btnBlock {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section4 .newCollection .newClothes .newCloth .btnBlock button {
+  width: 128.388px;
+  height: 35.949px;
+  border-radius: 25.678px;
+  border: 1.284px solid #73543F;
+  background: unset;
+  color: #73543F;
+  font-family: Inter;
+  font-size: 11.983px;
+  font-weight: 600;
+  letter-spacing: 0.599px;
+  cursor: pointer;
+}
+.section4 .newCollection .newClothes .newCloth i {
+  position: absolute;
+  bottom: 85px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+.section4 .newCollection .newClothes .newCloth .fa-heart {
+  color: red;
+}
+.section4 .newCollection .newClothes #newCloth1 {
+  width: 330px;
+  height: 400px;
+  border: 0.856px solid #73543F;
+  padding-bottom: 11px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 15px;
+}
+.section4 .newCollection .newClothes #newCloth1 .imgDiv {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.section4 .newCollection .newClothes #newCloth1 .imgDiv span {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13.695px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.068px;
+  text-transform: capitalize;
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+.section4 .newCollection .newClothes #newCloth1 .imgDiv img {
+  width: 53.32%;
+  height: 90%;
+  position: absolute;
+  left: 68px;
+}
+.section4 .newCollection .newClothes #newCloth1 h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.08px;
+  text-transform: capitalize;
+}
+.section4 .newCollection .newClothes #newCloth1 p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 11.983px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.06px;
+  text-transform: capitalize;
+}
+.section4 .newCollection .newClothes #newCloth1 p::after {
+  content: "$9.99";
+  color: #000;
+  font-family: Poppins;
+  font-size: 17.118px;
+  font-weight: 600;
+  line-height: 137.9%;
+  letter-spacing: 0.086px;
+  text-transform: capitalize;
+  display: flex;
+}
+.section4 .newCollection .newClothes #newCloth1 .btnBlock {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section4 .newCollection .newClothes #newCloth1 .btnBlock button {
+  width: 128.388px;
+  height: 35.949px;
+  border-radius: 25.678px;
+  border: 1.284px solid #73543F;
+  background: unset;
+  color: #73543F;
+  font-family: Inter;
+  font-size: 11.983px;
+  font-weight: 600;
+  letter-spacing: 0.599px;
+  cursor: pointer;
+}
+.section4 .newCollection .newClothes #newCloth2 img {
+  width: 45.95%;
+  height: 90%;
+}
+.section4 .newCollection .newClothes #newCloth2 p::after {
+  content: "$15.20";
+}
+.section4 .newCollection .newClothes #newCloth2 h1::before {
+  content: "2 style";
+  display: flex;
+  color: #000;
+  font-family: Poppins;
+  font-size: 10.271px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.051px;
+  text-transform: capitalize;
+}
+.section4 .newCollection .newClothes #newCloth3 img {
+  width: 55.77%;
+  height: 100%;
+}
+.section4 .newCollection .newClothes #newCloth3 p::after {
+  content: "$19.99";
+}
+.section4 .newCollection .newClothes #newCloth3 h1::before {
+  content: "3 style";
+  display: flex;
+  color: #000;
+  font-family: Poppins;
+  font-size: 10.271px;
+  font-weight: 400;
+  line-height: 137.9%;
+  letter-spacing: 0.051px;
+  text-transform: capitalize;
+}
+.section4 .newCollection .newClothes #newCloth4 img {
+  width: 48.89%;
+  height: 100%;
+}
+.section4 .newCollection .newClothes #newCloth4 p::after {
+  content: "$22.99";
+}
+.section4 .newCollection button {
+  width: 139px;
+  height: 39px;
+  border-radius: 20px;
+  border: 1px solid #73543F;
+  background: #73543F;
+  cursor: pointer;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.7px;
+}
+@media screen and (max-width: 1563px) {
+  .section4 .newCollection {
+    height: auto;
+  }
+  .section4 .newCollection .newClothes {
+    width: 90%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .section4 .newCollection .newClothes .newCloth {
+    height: 400px;
+  }
+  .section4 .newCollection button {
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 1048px) {
+  .section4 .newCollection .newClothes {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 760px) {
+  .section4 .newCollection .newClothes {
+    gap: 20px 0;
+  }
+  .section4 .newCollection .newClothes .newCloth {
+    width: 260px !important;
+    height: 300px !important;
+  }
+  .section4 .newCollection .newClothes .newCloth .btnBlock button {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 521px) {
+  .section4 .newCollection .newClothes {
+    gap: 20px 0;
+  }
+  .section4 .newCollection .newClothes .newCloth {
+    width: 180px;
+    height: 220px;
+  }
+  .section4 .newCollection .newClothes .newCloth h1 {
+    font-size: 12px;
+  }
+  .section4 .newCollection .newClothes .newCloth p {
+    font-size: 8px;
+  }
+  .section4 .newCollection .newClothes .newCloth p::after {
+    font-size: 9px;
+  }
+  .section4 .newCollection .newClothes .newCloth .imgDiv img {
+    left: 48px;
+  }
+  .section4 .newCollection .newClothes .newCloth .btnBlock button {
+    width: 68.388px;
+    height: 15.949px;
+    font-size: 7.983px;
+  }
+  .section4 .newCollection button {
+    width: 99px;
+    height: 29px;
+    font-size: 12px;
+  }
+}
+
+.section5 {
+  width: 100%;
+  height: 473px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  transition: 0.4s;
+}
+.section5 .carousel {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 160px;
+  position: absolute;
+  top: 34%;
+  transition: 0.4s;
+}
+.section5 .carousel img {
+  height: 160px;
+  width: calc(10% - 10px);
+  transition: 0.4s;
+}
+.section5 button {
+  width: 341px;
+  height: 70px;
+  background-color: #fff;
+  z-index: 2;
+  border: none;
+  color: #4b311e;
+  font-family: inter;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.section5 button:hover {
+  background-color: rgb(216, 216, 216);
+}
+@media screen and (max-width: 1061px) {
+  .section5 {
+    height: 310px;
+  }
+  .section5 .carousel {
+    top: 24%;
+  }
+  .section5 .carousel img {
+    height: 110px;
+    width: calc(10% - 10px);
+  }
+  .section5 button {
+    width: 271px;
+    height: 50px;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .section5 {
+    height: 220px;
+  }
+  .section5 .carousel {
+    top: 14%;
+  }
+  .section5 .carousel img {
+    height: 90px;
+    width: calc(10% - 10px);
+  }
+  .section5 button {
+    width: 231px;
+    height: 40px;
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .section5 {
+    height: 220px;
+  }
+  .section5 .carousel img {
+    height: 70px;
+    width: calc(10% - 10px);
+  }
+  .section5 button {
+    width: 181px;
+    height: 30px;
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .section5 {
+    height: 160px;
+  }
+  .section5 .carousel {
+    top: 0;
+  }
+  .section5 .carousel img {
+    height: 50px;
+    width: calc(10% - 10px);
+  }
+  .section5 button {
+    width: 121px;
+    height: 20px;
+    font-size: 7px;
+  }
+}
+
+footer {
+  width: 100%;
+  height: 246px;
+  background-color: rgba(115, 84, 63, 0.27);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+footer nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+footer nav .footlogo {
+  font-family: Merriweather;
+  font-size: 34px;
+  font-weight: 900;
+}
+footer nav .footlogo a {
+  color: #88432d;
+  position: relative;
+}
+footer nav .about {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+footer nav .about h1 {
+  font-size: 17px;
+  font-weight: 600;
+  font-family: inter;
+  margin-bottom: 10px;
+  color: #492E1C;
+}
+footer nav .about p {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  height: 60px;
+}
+footer nav .about p a {
+  color: #492E1C;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 300;
+  position: relative;
+}
+footer nav .about p a::after {
+  content: "";
+  height: 1px;
+  width: 0;
+  background: rgb(255, 255, 255);
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  transition: 150ms;
+}
+footer nav .about p a:hover::after {
+  left: 0;
+  width: 100%;
+}
+footer nav .about p a:hover {
+  color: black;
+}
+footer nav .icons {
+  height: 100px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+footer nav .icons h1 {
+  font-size: 17px;
+  font-weight: 600;
+  font-family: inter;
+  margin-bottom: 20px;
+  color: #492E1C;
+  margin-bottom: 10px;
+}
+footer nav .icons .soc {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: row;
+  gap: 21px;
+}
+footer nav .icons .soc svg:hover {
+  opacity: 0.8;
+}
+footer nav .icons .soc img:hover {
+  opacity: 0.7;
+}
+footer .bottomfooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 71px;
+  background-color: #73543F;
+}
+footer .bottomfooter p {
+  font-size: 12px;
+  color: #fff;
+  font-family: Inter;
+  letter-spacing: 1.44px;
+  font-weight: 300;
+}
+@media screen and (max-width: 1061px) {
+  footer {
+    height: 166px;
+  }
+  footer nav .footlogo {
+    font-size: 24px;
+  }
+  footer nav .about h1 {
+    font-size: 14px;
+  }
+  footer nav .about p {
+    height: 50px;
+  }
+  footer nav .about p a {
+    font-size: 11px;
+  }
+  footer nav .icons {
+    margin-top: 24px;
+  }
+  footer nav .icons h1 {
+    font-size: 14px;
+  }
+  footer nav .icons svg {
+    width: 20px;
+    height: 25px;
+  }
+  footer nav .icons img {
+    width: 30px;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 870px) {
+  footer {
+    height: 135px;
+  }
+  footer nav .footlogo {
+    font-size: 20px;
+  }
+  footer nav .about h1 {
+    font-size: 10px;
+  }
+  footer nav .about p {
+    height: 40px;
+  }
+  footer nav .about p a {
+    font-size: 8px;
+  }
+  footer nav .icons {
+    height: auto;
+    margin: 0 0 20px 0;
+  }
+  footer nav .icons h1 {
+    font-size: 10px;
+  }
+  footer nav .icons svg {
+    width: 15px;
+    height: 15px;
+  }
+  footer nav .icons img {
+    width: 20px;
+    height: 15px;
+  }
+  footer .bottomfooter {
+    height: 50px;
+  }
+  footer .bottomfooter p {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 570px) {
+  footer {
+    height: 135px;
+  }
+  footer nav .footlogo {
+    display: none;
+  }
+  footer nav .about h1 {
+    font-size: 10px;
+  }
+  footer nav .about p {
+    height: 40px;
+  }
+  footer nav .about p a {
+    font-size: 8px;
+  }
+  footer nav .icons {
+    height: auto;
+    margin: 0 0 20px 0;
+  }
+  footer nav .icons h1 {
+    font-size: 10px;
+  }
+  footer nav .icons svg {
+    width: 15px;
+    height: 15px;
+  }
+  footer nav .icons img {
+    width: 20px;
+    height: 15px;
+  }
+  footer nav .icons .soc {
+    gap: 5px;
+  }
+  footer .bottomfooter {
+    height: 50px;
+  }
+  footer .bottomfooter p {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  footer nav .icons {
+    display: none;
+  }
+  footer .bottomfooter {
+    font-size: 8px;
+  }
+}/*# sourceMappingURL=style.css.map */
