@@ -152,10 +152,11 @@ let clotsData = [
 
 const createClothBox = (el) => {
     let isBagged = basket.findIndex((item) => item.place == el.place);
-    const clothBox = document.createElement("a");
-    clothBox.href = "../product page/product.html";
+    const clothBox = document.createElement("div");
     clothBox.addEventListener("click", (e) => {
         localStorage.setItem("currentProduct", JSON.stringify(el))
+        document.querySelector(".go").click()
+
     })
     clothBox.style.color = "unset";
     clothBox.classList.add("item");
@@ -235,8 +236,7 @@ clotsData.map((el, index) => {
 //new clothes box
 
 const createNewClothBox = (el) => {
-    const newClothBox = document.createElement("a");
-    newClothBox.href = "../product page/product.html";
+    const newClothBox = document.createElement("div");
     newClothBox.style.color = "unset"
     newClothBox.className = "newCloth";
     newClothBox.classList.add("newCarusell");
@@ -286,6 +286,7 @@ const createNewClothBox = (el) => {
     newClothBox.appendChild(newClothBoxButtonBox);
     newClothBox.addEventListener("click", (e) => {
         localStorage.setItem("currentProduct", JSON.stringify(el))
+        document.querySelector(".go").click()
     })
 
     return newClothBox;
