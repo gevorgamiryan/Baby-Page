@@ -149,18 +149,16 @@ let clotsData = [
     },
 
 ];
-const goToProductPage = (el) => {
-    const eachPage = "portfolio/Baby%20Page/clothes-shop/ClothesShop.html";
-    const nextPage = `portfolio/Baby%20Page/product%20page/Product.html?${el.place}`;
-    window.location.href = window.location.href.replace(eachPage, nextPage);
-}
+
 const createClothBox = (el) => {
     let isBagged = basket.findIndex((item) => item.place == el.place);
-    const clothBox = document.createElement("div");
+    const clothBox = document.createElement("a");
+    clothBox.href = "../product page/product.html";
+    clothBox.addEventListener("click", (e) => {
+        localStorage.setItem("currentProduct",JSON.stringify(el))
+    })
+    clothBox.style.color = "unset";
     clothBox.classList.add("item");
-    clothBox.onclick = (e) => {
-        goToProductPage(el);
-    };
     const clothBoxSpan = document.createElement("span");
     const clothBoxImg = document.createElement("img");
     clothBoxImg.setAttribute("draggable", "false");
@@ -169,13 +167,16 @@ const createClothBox = (el) => {
     const clothBoxButtonBox = document.createElement("div");
     const btn = document.createElement("button");
     btn.onclick = (e) => {
-        e.stopPropagation();
+        e.preventDefault();
         addToCard(e, el, clothBox)
     };
+
     let svg = document.createElement("i");
     svg.setAttribute("class", `${el.liked === true ? "fa fa-heart" : "fa fa-heart-o"}`);
     svg.classList.add("svgDiv");
-    svg.onclick = (e) => toggleClick(e, el);
+    svg.onclick = (e) => {
+        toggleClick(e, el)
+    };
     clothBox.id = el.id;
     clothBox.className = "carusell";
     clothBox.classList.add("item");
@@ -192,16 +193,12 @@ const createClothBox = (el) => {
     }
 
     clothBoxButtonBox.appendChild(btn);
-    clothBox.appendChild(svg);
-    clothBox.appendChild(clothBoxSpan);
-    clothBox.appendChild(clothBoxImg);
-    clothBox.appendChild(clothBoxName);
-    clothBox.appendChild(ClothBoxPrice);
-    clothBox.appendChild(clothBoxButtonBox);
+    clothBox.append(svg, clothBoxSpan, clothBoxImg, clothBoxName, ClothBoxPrice, clothBoxButtonBox);
     return clothBox;
 }
 const toggleClick = (e, el) => {
     el.liked = !el.liked;
+    e.preventDefault();
     e.stopPropagation();
     let getAttribute = e.target.getAttribute("class");
     if (el.liked) {
@@ -238,7 +235,8 @@ clotsData.map((el, index) => {
 //new clothes box
 
 const createNewClothBox = (el) => {
-    const newClothBox = document.createElement("div");
+    const newClothBox = document.createElement("a");
+    newClothBox.href = "../product page/product.html";
     newClothBox.className = "newCloth";
     newClothBox.classList.add("newCarusell");
     newClothBox.classList.add("item");
@@ -287,7 +285,7 @@ const createNewClothBox = (el) => {
     newClothBox.onclick = (e) => {
         goToProductPage(el);
     };
-    
+
     return newClothBox;
 }
 const newClothes = document.querySelector(".newClothes");
