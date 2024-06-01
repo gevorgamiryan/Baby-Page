@@ -1,8 +1,9 @@
 const currentProduct = document.querySelector('.imgDiv img')
+// currentProduct.style.maxHeight = "240px";
 const clothData = JSON.parse(localStorage.getItem("currentProduct"))
 const clothName = document.querySelectorAll(".shopCard span");
 currentProduct.src = clothData.src
 clothName[1].innerText = clothData.name;
 clothName[4].innerText = "$" + clothData.price;
 
-clothName.style.width = "100%";
+clothName[1].style.width = "100%";

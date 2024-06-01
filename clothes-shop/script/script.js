@@ -155,7 +155,7 @@ const createClothBox = (el) => {
     const clothBox = document.createElement("a");
     clothBox.href = "../product page/product.html";
     clothBox.addEventListener("click", (e) => {
-        localStorage.setItem("currentProduct",JSON.stringify(el))
+        localStorage.setItem("currentProduct", JSON.stringify(el))
     })
     clothBox.style.color = "unset";
     clothBox.classList.add("item");
@@ -237,6 +237,7 @@ clotsData.map((el, index) => {
 const createNewClothBox = (el) => {
     const newClothBox = document.createElement("a");
     newClothBox.href = "../product page/product.html";
+    newClothBox.style.color = "unset"
     newClothBox.className = "newCloth";
     newClothBox.classList.add("newCarusell");
     newClothBox.classList.add("item");
@@ -254,10 +255,11 @@ const createNewClothBox = (el) => {
     newClothBoxButtonBox.className = "btnBlock";
     const btn = document.createElement("button");
     btn.onclick = (e) => {
-        e.stopPropagation();
-        addToCard(e, el, newClothBox);
-    }
+        e.preventDefault();
+        addToCard(e, el, newClothBox)
+    };
     let svg = document.createElement("i");
+
     svg.id = "svg";
     svg.setAttribute("class", `${el.liked === true ? "fa fa-heart" : "fa fa-heart-o"}`);
 
@@ -282,9 +284,9 @@ const createNewClothBox = (el) => {
     newClothBox.appendChild(newClothBoxName);
     newClothBox.appendChild(newClothBoxParag);
     newClothBox.appendChild(newClothBoxButtonBox);
-    newClothBox.onclick = (e) => {
-        goToProductPage(el);
-    };
+    newClothBox.addEventListener("click", (e) => {
+        localStorage.setItem("currentProduct", JSON.stringify(el))
+    })
 
     return newClothBox;
 }
