@@ -427,7 +427,8 @@
         }
     }
 
-    @media screen and (max-width:670px) {
+
+    @media screen and (max-width:673px) {
         menu {
             nav {
                 gap: 5px;
@@ -441,9 +442,7 @@
                 }
             }
         }
-    }
 
-    @media screen and (max-width:673px) {
         .lines {
             .clothes {
 
@@ -452,7 +451,7 @@
                 .cloth3,
                 .cloth4 {
                     width: 200px;
-                    height: 288px;
+                    height: 328px;
 
                     h1 {
                         margin-top: 0;
@@ -556,6 +555,7 @@
             }
         }
     }
+
     @media screen and (max-width:1048px) {
         .newCollection {
 
@@ -565,6 +565,7 @@
             }
         }
     }
+
     @media screen and (max-width:760px) {
         .newCollection {
             .newClothes {
@@ -610,14 +611,11 @@
                             left: 48px;
                         }
                     }
-                    .btnBlock button {
-                        width: 68.388px;
-                        height: 15.949px;
-                        font-size: 7.983px;
-                    }
+
                 }
 
             }
+
             button {
                 width: 99px;
                 height: 29px;
